@@ -23,17 +23,45 @@ Each of the provided types implements `Equatable`, `Comparable`, `LosslessString
 
 **Important!** The naive types do not perform any validation of the input components (year, hour, etc). If you do need to do any precise manipulations with time use native `Date` and `Calendar` types.
 
-### `NaiveDate`
+### Create
 
-Calendar date without timezone.
+Naive dates and times can be created either from strings (using a predefined format) or by using a memberwise method:
 
 ```swift
-NaiveDate(year: 2017, month: 10, day: 1)
 NaiveDate("2017-10-01")
-print(NaiveDate(year: 2017, month: 10, day: 1) // prints "2017-10-01"
+NaiveDate(year: 2017, month: 10, day: 1)
+
+NaiveTime("15:30:00")
+NaiveTime(hour: 15, minute: 30, second: 0)
+
+NaiveDateTime("2017-10-01T15:30")
+NaiveDateTime(
+    date: NaiveDate(year: 2017, month: 10, day: 1),
+    time: NaiveTime(hour: 15, minute: 30, second: 0)
+)
 ```
 
-When you need time zones, convert `NaiveDate` to `Date`:
+### Format
+
+Format dates without having to worry about time zones:
+
+```swift
+let date = NaiveDate("2017-11-01")!
+NaiveDateFormatter(dateStyle: .short).string(from: date)
+// prints "11/1/17"
+
+let time = NaiveTime("15:00")!
+NaiveDateFormatter(timeStyle: .short).string(from: time)
+// prints "3:00 PM"
+
+let dateTime = NaiveDateTime("2017-11-01T15:30:00")!
+NaiveDateFormatter(dateStyle: .short, timeStyle: .short).string(from: dateTime)
+// prints "11/1/17, 3:30 PM"
+```
+
+### Convert
+
+When you do need time zones, convert `NaiveDate` to `Date`:
 
 ```swift
 let date = NaiveDate(year: 2017, month: 10, day: 1)
@@ -46,31 +74,6 @@ Calendar.current.date(from: date)
 // "2017-10-01T00:00:00Z"
 Calendar.current.date(from: date, in: TimeZone(secondsFromGMT: 0)!)
 ```
-
-
-### `NaiveTime`
-
-Time without timezone.
-
-```swift
-NaiveTime(hour: 15, minute: 30, second: 0)
-NaiveTime("15:30:00")
-```
-
-
-### `NaiveDateTime`
-
-Combined date and time without timezone.
-
-```swift
-NaiveDateTime(
-    date: NaiveDate(year: 2017, month: 10, day: 1),
-    time: NaiveTime(hour: 15, minute: 30, second: 0)
-)
-NaiveDateTime("2017-10-01T15:30")
-```
-
-When you need time zones, convert `NaiveDateTime` to `Date`:
 
 ```swift
 let dateTime = NaiveDateTime(

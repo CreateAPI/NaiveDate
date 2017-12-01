@@ -11,19 +11,23 @@ public extension Calendar {
     /// Returns a date created from the specified naive date in a given time zone.
     /// - parameter timeZone: `nil` by default (uses Calendar time zone).
     public func date(from date: NaiveDate, in timeZone: TimeZone? = nil) -> Date? {
-        return self.date(from: DateComponents(self, timeZone: timeZone, date: date))
+        return _date(from: date, in: timeZone)
     }
 
     /// Returns a date created from the specified naive time in a given time zone.
     /// - parameter timeZone: `nil` by default (uses Calendar time zone).
     public func date(from time: NaiveTime, in timeZone: TimeZone? = nil) -> Date? {
-        return self.date(from: DateComponents(self, timeZone: timeZone, time: time))
+        return _date(from: time, in: timeZone)
     }
 
     /// Returns a date created from the specified naive datetime in a given time zone.
     /// - parameter timeZone: `nil` by default (uses Calendar time zone).
     public func date(from dateTime: NaiveDateTime, in timeZone: TimeZone? = nil) -> Date? {
-        return self.date(from: DateComponents(self, timeZone: timeZone, dateTime: dateTime))
+        return _date(from: dateTime, in: timeZone)
+    }
+
+    internal func _date<T: _DateComponentsConvertible>(from value: T, in timeZone: TimeZone? = nil) -> Date? {
+        return self.date(from: value.dateComponents(timeZone: timeZone))
     }
 }
 
@@ -52,23 +56,5 @@ public extension Calendar {
             date: NaiveDate(year: components.year!, month: components.month!, day: components.day!),
             time: NaiveTime(hour: components.hour!, minute: components.minute!, second: components.second!)
         )
-    }
-}
-
-// MARK: - Naive* -> DateComponents
-
-public extension DateComponents {
-    public init(_ calendar: Calendar? = nil, timeZone: TimeZone? = nil, date: NaiveDate) {
-        self.init(calendar: calendar, timeZone: timeZone, year: date.year, month: date.month, day: date.day)
-    }
-
-    public init(_ calendar: Calendar? = nil, timeZone: TimeZone? = nil, time: NaiveTime) {
-        self.init(calendar: calendar, timeZone: timeZone, hour: time.hour, minute: time.minute, second: time.second)
-    }
-
-    public init(_ calendar: Calendar? = nil, timeZone: TimeZone? = nil, dateTime: NaiveDateTime) {
-        let date = dateTime.date
-        let time = dateTime.time
-        self.init(calendar: calendar, timeZone: timeZone, year: date.year, month: date.month, day: date.day, hour: time.hour, minute: time.minute, second: time.second)
     }
 }

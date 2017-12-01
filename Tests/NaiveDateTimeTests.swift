@@ -73,21 +73,15 @@ class NaiveDateTest: XCTestCase {
     }
 
     func testToDate() {
-        test("converting to date in current time zone") {
+        test("converting to date in calendar's time zone") {
             let date = NaiveDate(year: 2017, month: 10, day: 1)
 
-            let calendar = Calendar.current
-            let timeZone = calendar.timeZone
-
-            let components = DateComponents(
-                calendar: calendar,
-                timeZone: timeZone,
-                year: 2017, month: 10, day: 1
-            )
+            var calendar = Calendar.current
+            calendar.timeZone = TimeZone(secondsFromGMT: 3600)!
 
             XCTAssertEqual(
                 calendar.date(from: date),
-                calendar.date(from: components)
+                _date(from: "2017-10-01T00:00:00+0100")
             )
         }
 
@@ -117,7 +111,7 @@ class NaiveDateTest: XCTestCase {
                 year: 2017, month: 10, day: 1
             )
             XCTAssertEqual(
-                DateComponents(date: date),
+                date.dateComponents(),
                 components
             )
         }
@@ -130,7 +124,7 @@ class NaiveDateTest: XCTestCase {
                 year: 2017, month: 10, day: 1
             )
             XCTAssertEqual(
-                DateComponents(timeZone: TimeZone(secondsFromGMT: 0)!, date: date),
+                date.dateComponents(timeZone: TimeZone(secondsFromGMT: 0)),
                 components
             )
         }
@@ -416,19 +410,12 @@ class NaiveDateTimeTest: XCTestCase {
                 date: NaiveDate(year: 2017, month: 10, day: 1),
                 time: NaiveTime(hour: 15, minute: 30, second: 0)
             )
-            let calendar = Calendar.current
-            let timeZone = calendar.timeZone
-
-            let components = DateComponents(
-                calendar: calendar,
-                timeZone: timeZone,
-                year: 2017, month: 10, day: 1,
-                hour: 15, minute: 30, second: 0
-            )
+            var calendar = Calendar.current
+            calendar.timeZone = TimeZone(secondsFromGMT: 3600)!
 
             XCTAssertEqual(
-                Calendar.current.date(from: dateTime),
-                calendar.date(from: components)
+                calendar.date(from: dateTime),
+                _date(from: "2017-10-01T15:30:00+0100")
             )
         }
 
@@ -468,7 +455,7 @@ class NaiveDateTimeTest: XCTestCase {
                 hour: 15, minute: 30, second: 0
             )
             XCTAssertEqual(
-                DateComponents(dateTime: dateTime),
+                dateTime.dateComponents(),
                 components
             )
         }
@@ -485,7 +472,7 @@ class NaiveDateTimeTest: XCTestCase {
                 hour: 15, minute: 30, second: 0
             )
             XCTAssertEqual(
-                DateComponents(timeZone: TimeZone(secondsFromGMT: 0)!, dateTime: dateTime),
+                dateTime.dateComponents(timeZone: TimeZone(secondsFromGMT: 0)),
                 components
             )
         }

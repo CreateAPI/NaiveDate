@@ -8,7 +8,7 @@ import Foundation
 // MARK: - NaiveDate -
 
 /// Calendar date without a timezone.
-public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable {
+public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let year: Int, month: Int, day: Int
 
     /// Initializes the naive date with a given date components.
@@ -58,13 +58,19 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     public func encode(to encoder: Encoder) throws {
         try _encode(self, to: encoder)
     }
+
+    // MARK: _DateComponentsConvertible
+
+    public func dateComponents(timeZone: TimeZone? = nil) -> DateComponents {
+        return DateComponents(timeZone: timeZone, year: year, month: month, day: day)
+    }
 }
 
 
 // MARK: - NaiveTime -
 
 /// Time without a timezone. Allows for second precision.
-public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable {
+public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let hour: Int, minute: Int, second: Int
 
     /// Initializes the naive time with a given date components.
@@ -137,13 +143,19 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
     public func encode(to encoder: Encoder) throws {
         try _encode(self, to: encoder)
     }
+
+    // MARK: _DateComponentsConvertible
+
+    public func dateComponents(timeZone: TimeZone? = nil) -> DateComponents {
+        return DateComponents(timeZone: timeZone, hour: hour, minute: minute, second: second)
+    }
 }
 
 
 // MARK: - NaiveDateTime -
 
 /// Combined date and time without timezone.
-public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable {
+public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let date: NaiveDate
     public let time: NaiveTime
 
@@ -193,10 +205,21 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
     public func encode(to encoder: Encoder) throws {
         try _encode(self, to: encoder)
     }
+
+    // MARK: _DateComponentsConvertible
+
+    public func dateComponents(timeZone: TimeZone? = nil) -> DateComponents {
+        return DateComponents(timeZone: timeZone, year: date.year, month: date.month, day: date.day, hour: time.hour, minute: time.minute, second: time.second)
+    }
 }
 
 
 // MARK: - Private -
+
+/// A type that can be converted to DateComponents (and in turn to Date).
+internal protocol _DateComponentsConvertible {
+    func dateComponents(timeZone: TimeZone?) -> DateComponents
+}
 
 private func _decode<T: LosslessStringConvertible>(from decoder: Decoder) throws -> T {
     let container = try decoder.singleValueContainer()
