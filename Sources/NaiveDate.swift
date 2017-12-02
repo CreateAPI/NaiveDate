@@ -38,10 +38,10 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
 
     /// Creates a naive date from a given string (e.g. "2017-12-30").
     public init?(_ string: String) {
-        let components = string.components(separatedBy: "-")
-        guard components.count == 3 else { return nil } // must have 3 components
-        guard let year = Int(components[0]), let month = Int(components[1]), let day = Int(components[2]) else { return nil }
-        self = NaiveDate(year: year, month: month, day: day)
+        // Not using `ISO8601DateFormatter` because it only works with `Date`
+        guard let cmps = _components(from: string, separator: "-"),
+            cmps.count == 3 else { return nil }
+        self = NaiveDate(year: cmps[0], month: cmps[1], day: cmps[2])
     }
 
     /// Returns a string representation of a naive date (e.g. "2017-12-30").
@@ -112,21 +112,9 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
 
     /// Creates a naive time from a given string (e.g. "23:59", or "23:59:59").
     public init?(_ string: String) {
-        let components = string.components(separatedBy: ":")
-
-        // has to have at least two components (hour and minute)
-        guard components.count > 1 else { return nil }
-
-        guard let hour = Int(components[0]), let minute = Int(components[1]) else { return nil } // invalid input
-        self.hour = hour
-        self.minute = minute
-
-        if components.count > 2 { // also has seconds
-            guard let second = Int(components[2]) else { return nil } // invalid input
-            self.second = second
-        } else {
-            self.second = 0
-        }
+        guard let cmps = _components(from: string, separator: ":"),
+            (2...3).contains(cmps.count) else { return nil }
+        self.init(hour: cmps[0], minute: cmps[1], second: (cmps.count > 2 ? cmps[2] : 0))
     }
 
     /// Returns a string representation of a naive time (e.g. "23:59:59").
@@ -288,4 +276,10 @@ private func _decode<T: LosslessStringConvertible>(from decoder: Decoder) throws
 private func _encode<T: LosslessStringConvertible>(_ value: T, to encoder: Encoder) throws {
     var container = encoder.singleValueContainer()
     try container.encode(value.description)
+}
+
+private func _components(from string: String, separator: String) -> [Int]? {
+    let substrings = string.components(separatedBy: separator)
+    let components = substrings.flatMap(Int.init)
+    return components.count == substrings.count ? components : nil
 }

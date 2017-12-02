@@ -37,6 +37,11 @@ class NaiveDateTest: XCTestCase {
     func testFromString() {
         XCTAssertNil(NaiveDate("2017"))
         XCTAssertNil(NaiveDate("2017-10"))
+        XCTAssertNil(NaiveDate("2017-AA-10-01"))
+        XCTAssertNil(NaiveDate(" 2017-10-01"))
+        XCTAssertNil(NaiveDate("2017- 10-01"))
+        XCTAssertNil(NaiveDate("2017:10:01"))
+
         XCTAssertEqual(NaiveDate("2017-10-01"), NaiveDate(year: 2017, month: 10, day: 1))
         XCTAssertEqual(NaiveDate("2017-10-1"), NaiveDate(year: 2017, month: 10, day: 1))
     }
@@ -175,11 +180,16 @@ class NaiveTimeTest: XCTestCase {
     // MARK: LosslessStringConvertible
 
     func testFromString() {
-        XCTAssertNil(NaiveTime("2klfdjafk"))
+        XCTAssertNil(NaiveTime("AA"))
         XCTAssertNil(NaiveTime(""))
-        XCTAssertNil(NaiveTime("23:fd"))
-        XCTAssertNil(NaiveTime("23-26"))
+        XCTAssertNil(NaiveTime("23:AA"))
+        XCTAssertNil(NaiveTime("23-59"))
         XCTAssertNil(NaiveTime("23"))
+        XCTAssertNil(NaiveTime("23:AA:59:59"))
+
+        XCTAssertNil(NaiveTime(" 23:59:59"))
+        XCTAssertNil(NaiveTime("23:59:59 "))
+        XCTAssertNil(NaiveTime("23:59 :59"))
 
         XCTAssertEqual(NaiveTime("23:59:59"), NaiveTime(hour: 23, minute: 59, second: 59))
         XCTAssertEqual(NaiveTime("23:59"), NaiveTime(hour: 23, minute: 59, second: 0))

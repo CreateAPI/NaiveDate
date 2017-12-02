@@ -7,14 +7,14 @@
 <a href="https://travis-ci.org/kean/NaiveDate"><img src="https://img.shields.io/travis/kean/NaiveDate/master.svg"></a>
 </p>
 
-The missing **naive** date, time, and datetime types.
+**Naive** date, time, and datetime types.
 
 
 ## Usage
 
-Native `Date` type is great for working with dates along the time zones (e.g. "2017-09-29T15:00:00+0300"), however there are some scenarios in which naive dates and times are desirable.
+Native `Date` type is great for working with  time zones (e.g. "2017-09-29T15:00:00+0300"), however there are scenarios in which naive dates and times are desirable.
 
-The library implements three types for representing naive date:
+The library implements three types:
 - `NaiveDate` (e.g. "2017-09-29")
 - `NaiveTime` (e.g. "15:30:00")
 - `NaiveDateTime` (e.g. "2017-09-29T15:30:00" - no time zone and no offset).
