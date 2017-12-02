@@ -7,19 +7,17 @@
 <a href="https://travis-ci.org/kean/NaiveDate"><img src="https://img.shields.io/travis/kean/NaiveDate/master.svg"></a>
 </p>
 
-**Naive** date, time, and datetime types.
+`Date` type is great for working with time zones (e.g. `2017-09-29T15:00:00+0300`), however, there are scenarios in which **naive** dates and times are desirable.
 
 
 ## Usage
 
-Native `Date` type is great for working with  time zones (e.g. "2017-09-29T15:00:00+0300"), however there are scenarios in which naive dates and times are desirable.
-
 The library implements three types:
-- `NaiveDate` (e.g. "2017-09-29")
-- `NaiveTime` (e.g. "15:30:00")
-- `NaiveDateTime` (e.g. "2017-09-29T15:30:00" - no time zone and no offset).
+- `NaiveDate` (e.g. `2017-09-29`)
+- `NaiveTime` (e.g. `15:30:00`)
+- `NaiveDateTime` (e.g. `2017-09-29T15:30:00` - no time zone and no offset).
 
-Each of the provided types implements `Equatable`, `Comparable`, `LosslessStringConvertible`, `Codable` protocols, and can also be converted to  `Date`, and `DateComponents`.
+Each of the provided types implements `Equatable`, `Comparable`, `LosslessStringConvertible`, `Codable` protocols. Naive types can also be converted to  `Date`, and `DateComponents`.
 
 **Important!** The naive types do not perform any validation of the input components (year, hour, etc). If you do need to do any precise manipulations with time use native `Date` and `Calendar` types.
 
