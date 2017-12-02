@@ -17,13 +17,11 @@ The library implements three types:
 - `NaiveTime` (e.g. `15:30:00`)
 - `NaiveDateTime` (e.g. `2017-09-29T15:30:00` - no time zone and no offset).
 
-Each of the provided types implements `Equatable`, `Comparable`, `LosslessStringConvertible`, `Codable` protocols. Naive types can also be converted to  `Date`, and `DateComponents`.
-
-**Important!** The naive types do not perform any validation of the input components (year, hour, etc). If you do need to do any precise manipulations with time use native `Date` and `Calendar` types.
+Each of them implements `Equatable`, `Comparable`, `LosslessStringConvertible`, `Codable` protocols. Naive types can also be converted to  `Date`, and `DateComponents`.
 
 ### Create
 
-Naive dates and times can be created either from strings (using a predefined format) or by using a memberwise method:
+Naive dates and times can be created from a string (using a predefined format), using `Decodable`, or with a memberwise initializer:
 
 ```swift
 NaiveDate("2017-10-01")
@@ -80,6 +78,7 @@ let dateTime = NaiveDateTime(
 Calendar.current.date(from: dateTime)
 ```
 
+**Important!** The naive types do not perform any validation of the input components (year, hour, etc). This means the datetime may not actually exist in certain areas in the world even though it is valid. For example, when daylight saving changes are applied by a region, the clock typically moves forward or backward by one hour. This means certain datetimes never occur or may occur more than once. If you do need to do any precise manipulations with time use native `Date` and `Calendar` types.
 
 ## Requirements
 
