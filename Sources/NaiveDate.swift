@@ -154,6 +154,14 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
         self.date = date; self.time = time
     }
 
+    /// Initializes the naive datetime with a given date components.
+    /// - important: The naive types don't validate input components. For any
+    /// precise manipulations with time use native `Date` and `Calendar` types.
+    public init(year: Int, month: Int, day: Int, hour: Int = 0, minute: Int = 0, second: Int = 0) {
+        self.date = NaiveDate(year: year, month: month, day: day)
+        self.time = NaiveTime(hour: hour, minute: minute, second: second)
+    }
+
     // MARK: Equatable, Hashable, Comparable
 
     public var hashValue: Int {
