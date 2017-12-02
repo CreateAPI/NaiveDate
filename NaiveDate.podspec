@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'NaiveDate'
-    s.version          = '0.1'
+    s.version          = '0.2'
     s.summary          = 'Naive date and time types'
     s.homepage         = 'https://github.com/kean/NaiveDate'
     s.license          = 'MIT'
