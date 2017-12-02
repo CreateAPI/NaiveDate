@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C20715B1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDateTime.swift */; };
-		0C20715C1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDateTime.swift */; };
-		0C20715D1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDateTime.swift */; };
-		0C20715E1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDateTime.swift */; };
-		0CAA5D171DB14767001F6D96 /* NaiveDateTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5108371D4E824A00F1F405 /* NaiveDateTime.framework */; };
-		0CAA5D211DB14780001F6D96 /* NaiveDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTimeTests.swift */; };
-		0CAA5D2D1DB14901001F6D96 /* NaiveDateTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5108451D4E82B900F1F405 /* NaiveDateTime.framework */; };
-		0CAA5D331DB14912001F6D96 /* NaiveDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTimeTests.swift */; };
-		0CAA5D3E1DB1495E001F6D96 /* NaiveDateTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5108211D4E81CE00F1F405 /* NaiveDateTime.framework */; };
-		0CAA5D441DB1496B001F6D96 /* NaiveDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTimeTests.swift */; };
-		0CE6A8B61FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */; };
-		0CE6A8B71FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */; };
-		0CE6A8B81FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */; };
-		0CE6A8B91FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */; };
-		0CE6A8BB1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8BA1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift */; };
-		0CE6A8BC1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8BA1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift */; };
-		0CE6A8BD1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8BA1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift */; };
+		0C20715B1D4E83A700EA5BEF /* NaiveDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDate.swift */; };
+		0C20715C1D4E83A700EA5BEF /* NaiveDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDate.swift */; };
+		0C20715D1D4E83A700EA5BEF /* NaiveDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDate.swift */; };
+		0C20715E1D4E83A700EA5BEF /* NaiveDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20715A1D4E83A700EA5BEF /* NaiveDate.swift */; };
+		0CAA5D171DB14767001F6D96 /* NaiveDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5108371D4E824A00F1F405 /* NaiveDate.framework */; };
+		0CAA5D211DB14780001F6D96 /* NaiveDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTests.swift */; };
+		0CAA5D2D1DB14901001F6D96 /* NaiveDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5108451D4E82B900F1F405 /* NaiveDate.framework */; };
+		0CAA5D331DB14912001F6D96 /* NaiveDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTests.swift */; };
+		0CAA5D3E1DB1495E001F6D96 /* NaiveDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5108211D4E81CE00F1F405 /* NaiveDate.framework */; };
+		0CAA5D441DB1496B001F6D96 /* NaiveDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTests.swift */; };
+		0CE6A8B61FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateFormatter.swift */; };
+		0CE6A8B71FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateFormatter.swift */; };
+		0CE6A8B81FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateFormatter.swift */; };
+		0CE6A8B91FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateFormatter.swift */; };
+		0CE6A8BB1FD1E69400627ED1 /* NaiveDateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8BA1FD1E69400627ED1 /* NaiveDateFormatterTest.swift */; };
+		0CE6A8BC1FD1E69400627ED1 /* NaiveDateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8BA1FD1E69400627ED1 /* NaiveDateFormatterTest.swift */; };
+		0CE6A8BD1FD1E69400627ED1 /* NaiveDateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8BA1FD1E69400627ED1 /* NaiveDateFormatterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,25 +51,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C20715A1D4E83A700EA5BEF /* NaiveDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveDateTime.swift; sourceTree = "<group>"; };
-		0C5108211D4E81CE00F1F405 /* NaiveDateTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDateTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C20715A1D4E83A700EA5BEF /* NaiveDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveDate.swift; sourceTree = "<group>"; };
+		0C5108211D4E81CE00F1F405 /* NaiveDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C5108301D4E820D00F1F405 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C5108371D4E824A00F1F405 /* NaiveDateTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDateTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C5108451D4E82B900F1F405 /* NaiveDateTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDateTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C5108371D4E824A00F1F405 /* NaiveDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C5108451D4E82B900F1F405 /* NaiveDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7E0EB81DBA0E3E00BA75EC /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		0C7E0EB91DBA0F1900BA75EC /* NaiveDateTime.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = NaiveDateTime.podspec; sourceTree = "<group>"; };
-		0C909BDA1FCFEC2200B25B65 /* NaiveDateTime.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NaiveDateTime.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		0C909BDA1FCFEC2200B25B65 /* NaiveDate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NaiveDate.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0CAA5D071DB14531001F6D96 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		0CAA5D081DB14531001F6D96 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0CAA5D121DB14766001F6D96 /* NaiveDateTime iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NaiveDateTime iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CAA5D121DB14766001F6D96 /* NaiveDate iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NaiveDate iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA5D1E1DB14780001F6D96 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CAA5D1F1DB14780001F6D96 /* NaiveDateTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveDateTimeTests.swift; sourceTree = "<group>"; };
-		0CAA5D281DB14901001F6D96 /* NaiveDateTime tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NaiveDateTime tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CAA5D391DB1495E001F6D96 /* NaiveDateTime macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NaiveDateTime macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CAA5D1F1DB14780001F6D96 /* NaiveDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveDateTests.swift; sourceTree = "<group>"; };
+		0CAA5D281DB14901001F6D96 /* NaiveDate tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NaiveDate tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CAA5D391DB1495E001F6D96 /* NaiveDate macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NaiveDate macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA5D461DB149FF001F6D96 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		0CE052001D4E830700A12B45 /* NaiveDateTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDateTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaiveDateTimeFormatter.swift; sourceTree = "<group>"; };
-		0CE6A8BA1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaiveDateTimeFormatterTest.swift; sourceTree = "<group>"; };
+		0CE052001D4E830700A12B45 /* NaiveDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CE6A8B51FD1E00900627ED1 /* NaiveDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaiveDateFormatter.swift; sourceTree = "<group>"; };
+		0CE6A8BA1FD1E69400627ED1 /* NaiveDateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaiveDateFormatterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CAA5D171DB14767001F6D96 /* NaiveDateTime.framework in Frameworks */,
+				0CAA5D171DB14767001F6D96 /* NaiveDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CAA5D2D1DB14901001F6D96 /* NaiveDateTime.framework in Frameworks */,
+				0CAA5D2D1DB14901001F6D96 /* NaiveDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CAA5D3E1DB1495E001F6D96 /* NaiveDateTime.framework in Frameworks */,
+				0CAA5D3E1DB1495E001F6D96 /* NaiveDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,7 @@
 		0C5108171D4E81CE00F1F405 = {
 			isa = PBXGroup;
 			children = (
-				0C909BDA1FCFEC2200B25B65 /* NaiveDateTime.playground */,
+				0C909BDA1FCFEC2200B25B65 /* NaiveDate.playground */,
 				0C51082C1D4E820000F1F405 /* Sources */,
 				0C51082F1D4E820D00F1F405 /* Supporting Files */,
 				0CAA5D1D1DB14780001F6D96 /* Tests */,
@@ -143,13 +143,13 @@
 		0C5108221D4E81CE00F1F405 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C5108211D4E81CE00F1F405 /* NaiveDateTime.framework */,
-				0C5108371D4E824A00F1F405 /* NaiveDateTime.framework */,
-				0C5108451D4E82B900F1F405 /* NaiveDateTime.framework */,
-				0CE052001D4E830700A12B45 /* NaiveDateTime.framework */,
-				0CAA5D121DB14766001F6D96 /* NaiveDateTime iOS Tests.xctest */,
-				0CAA5D281DB14901001F6D96 /* NaiveDateTime tvOS Tests.xctest */,
-				0CAA5D391DB1495E001F6D96 /* NaiveDateTime macOS Tests.xctest */,
+				0C5108211D4E81CE00F1F405 /* NaiveDate.framework */,
+				0C5108371D4E824A00F1F405 /* NaiveDate.framework */,
+				0C5108451D4E82B900F1F405 /* NaiveDate.framework */,
+				0CE052001D4E830700A12B45 /* NaiveDate.framework */,
+				0CAA5D121DB14766001F6D96 /* NaiveDate iOS Tests.xctest */,
+				0CAA5D281DB14901001F6D96 /* NaiveDate tvOS Tests.xctest */,
+				0CAA5D391DB1495E001F6D96 /* NaiveDate macOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,8 +157,8 @@
 		0C51082C1D4E820000F1F405 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0C20715A1D4E83A700EA5BEF /* NaiveDateTime.swift */,
-				0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */,
+				0C20715A1D4E83A700EA5BEF /* NaiveDate.swift */,
+				0CE6A8B51FD1E00900627ED1 /* NaiveDateFormatter.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -187,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				0CAA5D1E1DB14780001F6D96 /* Info.plist */,
-				0CAA5D1F1DB14780001F6D96 /* NaiveDateTimeTests.swift */,
-				0CE6A8BA1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift */,
+				0CAA5D1F1DB14780001F6D96 /* NaiveDateTests.swift */,
+				0CE6A8BA1FD1E69400627ED1 /* NaiveDateFormatterTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -227,9 +227,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0C5108201D4E81CE00F1F405 /* NaiveDateTime macOS */ = {
+		0C5108201D4E81CE00F1F405 /* NaiveDate macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C5108291D4E81CE00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDateTime macOS" */;
+			buildConfigurationList = 0C5108291D4E81CE00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDate macOS" */;
 			buildPhases = (
 				0C51081C1D4E81CE00F1F405 /* Sources */,
 				0C51081D1D4E81CE00F1F405 /* Frameworks */,
@@ -240,14 +240,14 @@
 			);
 			dependencies = (
 			);
-			name = "NaiveDateTime macOS";
+			name = "NaiveDate macOS";
 			productName = Promise;
-			productReference = 0C5108211D4E81CE00F1F405 /* NaiveDateTime.framework */;
+			productReference = 0C5108211D4E81CE00F1F405 /* NaiveDate.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0C5108361D4E824A00F1F405 /* NaiveDateTime iOS */ = {
+		0C5108361D4E824A00F1F405 /* NaiveDate iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C51083C1D4E824A00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDateTime iOS" */;
+			buildConfigurationList = 0C51083C1D4E824A00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDate iOS" */;
 			buildPhases = (
 				0C5108321D4E824A00F1F405 /* Sources */,
 				0C5108331D4E824A00F1F405 /* Frameworks */,
@@ -258,14 +258,14 @@
 			);
 			dependencies = (
 			);
-			name = "NaiveDateTime iOS";
+			name = "NaiveDate iOS";
 			productName = "Promise iOS";
-			productReference = 0C5108371D4E824A00F1F405 /* NaiveDateTime.framework */;
+			productReference = 0C5108371D4E824A00F1F405 /* NaiveDate.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0C5108441D4E82B900F1F405 /* NaiveDateTime tvOS */ = {
+		0C5108441D4E82B900F1F405 /* NaiveDate tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C51084A1D4E82B900F1F405 /* Build configuration list for PBXNativeTarget "NaiveDateTime tvOS" */;
+			buildConfigurationList = 0C51084A1D4E82B900F1F405 /* Build configuration list for PBXNativeTarget "NaiveDate tvOS" */;
 			buildPhases = (
 				0C5108401D4E82B900F1F405 /* Sources */,
 				0C5108411D4E82B900F1F405 /* Frameworks */,
@@ -276,14 +276,14 @@
 			);
 			dependencies = (
 			);
-			name = "NaiveDateTime tvOS";
+			name = "NaiveDate tvOS";
 			productName = "Promise tvOS";
-			productReference = 0C5108451D4E82B900F1F405 /* NaiveDateTime.framework */;
+			productReference = 0C5108451D4E82B900F1F405 /* NaiveDate.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0CAA5D111DB14766001F6D96 /* NaiveDateTime iOS Tests */ = {
+		0CAA5D111DB14766001F6D96 /* NaiveDate iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CAA5D1A1DB14767001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDateTime iOS Tests" */;
+			buildConfigurationList = 0CAA5D1A1DB14767001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDate iOS Tests" */;
 			buildPhases = (
 				0CAA5D0E1DB14766001F6D96 /* Sources */,
 				0CAA5D0F1DB14766001F6D96 /* Frameworks */,
@@ -294,14 +294,14 @@
 			dependencies = (
 				0CAA5D191DB14767001F6D96 /* PBXTargetDependency */,
 			);
-			name = "NaiveDateTime iOS Tests";
+			name = "NaiveDate iOS Tests";
 			productName = "Pill iOS Tests";
-			productReference = 0CAA5D121DB14766001F6D96 /* NaiveDateTime iOS Tests.xctest */;
+			productReference = 0CAA5D121DB14766001F6D96 /* NaiveDate iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0CAA5D271DB14901001F6D96 /* NaiveDateTime tvOS Tests */ = {
+		0CAA5D271DB14901001F6D96 /* NaiveDate tvOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CAA5D301DB14901001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDateTime tvOS Tests" */;
+			buildConfigurationList = 0CAA5D301DB14901001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDate tvOS Tests" */;
 			buildPhases = (
 				0CAA5D241DB14901001F6D96 /* Sources */,
 				0CAA5D251DB14901001F6D96 /* Frameworks */,
@@ -312,14 +312,14 @@
 			dependencies = (
 				0CAA5D2F1DB14901001F6D96 /* PBXTargetDependency */,
 			);
-			name = "NaiveDateTime tvOS Tests";
+			name = "NaiveDate tvOS Tests";
 			productName = "Pill tvOS Tests";
-			productReference = 0CAA5D281DB14901001F6D96 /* NaiveDateTime tvOS Tests.xctest */;
+			productReference = 0CAA5D281DB14901001F6D96 /* NaiveDate tvOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0CAA5D381DB1495E001F6D96 /* NaiveDateTime macOS Tests */ = {
+		0CAA5D381DB1495E001F6D96 /* NaiveDate macOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CAA5D411DB1495E001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDateTime macOS Tests" */;
+			buildConfigurationList = 0CAA5D411DB1495E001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDate macOS Tests" */;
 			buildPhases = (
 				0CAA5D351DB1495E001F6D96 /* Sources */,
 				0CAA5D361DB1495E001F6D96 /* Frameworks */,
@@ -330,14 +330,14 @@
 			dependencies = (
 				0CAA5D401DB1495E001F6D96 /* PBXTargetDependency */,
 			);
-			name = "NaiveDateTime macOS Tests";
+			name = "NaiveDate macOS Tests";
 			productName = "Pill macOS Tests";
-			productReference = 0CAA5D391DB1495E001F6D96 /* NaiveDateTime macOS Tests.xctest */;
+			productReference = 0CAA5D391DB1495E001F6D96 /* NaiveDate macOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0CE051FF1D4E830700A12B45 /* NaiveDateTime watchOS */ = {
+		0CE051FF1D4E830700A12B45 /* NaiveDate watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CE052071D4E830700A12B45 /* Build configuration list for PBXNativeTarget "NaiveDateTime watchOS" */;
+			buildConfigurationList = 0CE052071D4E830700A12B45 /* Build configuration list for PBXNativeTarget "NaiveDate watchOS" */;
 			buildPhases = (
 				0CE051FB1D4E830700A12B45 /* Sources */,
 				0CE051FC1D4E830700A12B45 /* Frameworks */,
@@ -348,9 +348,9 @@
 			);
 			dependencies = (
 			);
-			name = "NaiveDateTime watchOS";
+			name = "NaiveDate watchOS";
 			productName = "Promise watchOS";
-			productReference = 0CE052001D4E830700A12B45 /* NaiveDateTime.framework */;
+			productReference = 0CE052001D4E830700A12B45 /* NaiveDate.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -406,7 +406,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0C51081B1D4E81CE00F1F405 /* Build configuration list for PBXProject "NaiveDateTime" */;
+			buildConfigurationList = 0C51081B1D4E81CE00F1F405 /* Build configuration list for PBXProject "NaiveDate" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -418,13 +418,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0C5108361D4E824A00F1F405 /* NaiveDateTime iOS */,
-				0C5108201D4E81CE00F1F405 /* NaiveDateTime macOS */,
-				0C5108441D4E82B900F1F405 /* NaiveDateTime tvOS */,
-				0CE051FF1D4E830700A12B45 /* NaiveDateTime watchOS */,
-				0CAA5D111DB14766001F6D96 /* NaiveDateTime iOS Tests */,
-				0CAA5D271DB14901001F6D96 /* NaiveDateTime tvOS Tests */,
-				0CAA5D381DB1495E001F6D96 /* NaiveDateTime macOS Tests */,
+				0C5108361D4E824A00F1F405 /* NaiveDate iOS */,
+				0C5108201D4E81CE00F1F405 /* NaiveDate macOS */,
+				0C5108441D4E82B900F1F405 /* NaiveDate tvOS */,
+				0CE051FF1D4E830700A12B45 /* NaiveDate watchOS */,
+				0CAA5D111DB14766001F6D96 /* NaiveDate iOS Tests */,
+				0CAA5D271DB14901001F6D96 /* NaiveDate tvOS Tests */,
+				0CAA5D381DB1495E001F6D96 /* NaiveDate macOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -486,8 +486,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C20715C1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */,
-				0CE6A8B71FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */,
+				0C20715C1D4E83A700EA5BEF /* NaiveDate.swift in Sources */,
+				0CE6A8B71FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,8 +495,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE6A8B61FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */,
-				0C20715B1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */,
+				0CE6A8B61FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */,
+				0C20715B1D4E83A700EA5BEF /* NaiveDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C20715D1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */,
-				0CE6A8B81FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */,
+				0C20715D1D4E83A700EA5BEF /* NaiveDate.swift in Sources */,
+				0CE6A8B81FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,8 +513,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE6A8BB1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift in Sources */,
-				0CAA5D211DB14780001F6D96 /* NaiveDateTimeTests.swift in Sources */,
+				0CE6A8BB1FD1E69400627ED1 /* NaiveDateFormatterTest.swift in Sources */,
+				0CAA5D211DB14780001F6D96 /* NaiveDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,8 +522,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE6A8BC1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift in Sources */,
-				0CAA5D331DB14912001F6D96 /* NaiveDateTimeTests.swift in Sources */,
+				0CE6A8BC1FD1E69400627ED1 /* NaiveDateFormatterTest.swift in Sources */,
+				0CAA5D331DB14912001F6D96 /* NaiveDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,8 +531,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE6A8BD1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift in Sources */,
-				0CAA5D441DB1496B001F6D96 /* NaiveDateTimeTests.swift in Sources */,
+				0CE6A8BD1FD1E69400627ED1 /* NaiveDateFormatterTest.swift in Sources */,
+				0CAA5D441DB1496B001F6D96 /* NaiveDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,8 +540,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C20715E1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */,
-				0CE6A8B91FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */,
+				0C20715E1D4E83A700EA5BEF /* NaiveDate.swift in Sources */,
+				0CE6A8B91FD1E00900627ED1 /* NaiveDateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,17 +550,17 @@
 /* Begin PBXTargetDependency section */
 		0CAA5D191DB14767001F6D96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C5108361D4E824A00F1F405 /* NaiveDateTime iOS */;
+			target = 0C5108361D4E824A00F1F405 /* NaiveDate iOS */;
 			targetProxy = 0CAA5D181DB14767001F6D96 /* PBXContainerItemProxy */;
 		};
 		0CAA5D2F1DB14901001F6D96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C5108441D4E82B900F1F405 /* NaiveDateTime tvOS */;
+			target = 0C5108441D4E82B900F1F405 /* NaiveDate tvOS */;
 			targetProxy = 0CAA5D2E1DB14901001F6D96 /* PBXContainerItemProxy */;
 		};
 		0CAA5D401DB1495E001F6D96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C5108201D4E81CE00F1F405 /* NaiveDateTime macOS */;
+			target = 0C5108201D4E81CE00F1F405 /* NaiveDate macOS */;
 			targetProxy = 0CAA5D3F1DB1495E001F6D96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -692,8 +692,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -715,8 +715,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -736,8 +736,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -760,8 +760,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -782,8 +782,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -805,8 +805,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -825,7 +825,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDateTime-iOS-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDate-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};
@@ -841,7 +841,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDateTime-iOS-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDate-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -856,7 +856,7 @@
 				DEVELOPMENT_TEAM = NR8DLKJ7E6;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDateTime-tvOS-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDate-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
@@ -871,7 +871,7 @@
 				DEVELOPMENT_TEAM = NR8DLKJ7E6;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDateTime-tvOS-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDate-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
@@ -889,7 +889,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDateTime-macOS-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDate-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -904,7 +904,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDateTime-macOS-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.kean.NaiveDate-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -922,8 +922,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -945,8 +945,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDateTime;
-				PRODUCT_NAME = NaiveDateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.kean.NaiveDate;
+				PRODUCT_NAME = NaiveDate;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -958,7 +958,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C51081B1D4E81CE00F1F405 /* Build configuration list for PBXProject "NaiveDateTime" */ = {
+		0C51081B1D4E81CE00F1F405 /* Build configuration list for PBXProject "NaiveDate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C5108271D4E81CE00F1F405 /* Debug */,
@@ -967,7 +967,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C5108291D4E81CE00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDateTime macOS" */ = {
+		0C5108291D4E81CE00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDate macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C51082A1D4E81CE00F1F405 /* Debug */,
@@ -976,7 +976,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C51083C1D4E824A00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDateTime iOS" */ = {
+		0C51083C1D4E824A00F1F405 /* Build configuration list for PBXNativeTarget "NaiveDate iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C51083D1D4E824A00F1F405 /* Debug */,
@@ -985,7 +985,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C51084A1D4E82B900F1F405 /* Build configuration list for PBXNativeTarget "NaiveDateTime tvOS" */ = {
+		0C51084A1D4E82B900F1F405 /* Build configuration list for PBXNativeTarget "NaiveDate tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C51084B1D4E82B900F1F405 /* Debug */,
@@ -994,7 +994,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CAA5D1A1DB14767001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDateTime iOS Tests" */ = {
+		0CAA5D1A1DB14767001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDate iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CAA5D1B1DB14767001F6D96 /* Debug */,
@@ -1003,7 +1003,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CAA5D301DB14901001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDateTime tvOS Tests" */ = {
+		0CAA5D301DB14901001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDate tvOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CAA5D311DB14901001F6D96 /* Debug */,
@@ -1012,7 +1012,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CAA5D411DB1495E001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDateTime macOS Tests" */ = {
+		0CAA5D411DB1495E001F6D96 /* Build configuration list for PBXNativeTarget "NaiveDate macOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CAA5D421DB1495E001F6D96 /* Debug */,
@@ -1021,7 +1021,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CE052071D4E830700A12B45 /* Build configuration list for PBXNativeTarget "NaiveDateTime watchOS" */ = {
+		0CE052071D4E830700A12B45 /* Build configuration list for PBXNativeTarget "NaiveDate watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CE052051D4E830700A12B45 /* Debug */,

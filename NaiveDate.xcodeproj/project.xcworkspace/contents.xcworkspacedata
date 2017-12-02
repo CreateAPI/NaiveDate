@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/kean/Develop/Source/NaiveDateTime/NaiveDateTime.xcodeproj">
+      location = "self:/Users/kean/Develop/Source/NaiveDateTime/NaiveDate.xcodeproj">
    </FileRef>
 </Workspace>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0C5108201D4E81CE00F1F405"
-               BuildableName = "NaiveDateTime.framework"
-               BlueprintName = "NaiveDateTime macOS"
-               ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+               BuildableName = "NaiveDate.framework"
+               BlueprintName = "NaiveDate macOS"
+               ReferencedContainer = "container:NaiveDate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0CAA5D381DB1495E001F6D96"
-               BuildableName = "NaiveDateTime macOS Tests.xctest"
-               BlueprintName = "NaiveDateTime macOS Tests"
-               ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+               BuildableName = "NaiveDate macOS Tests.xctest"
+               BlueprintName = "NaiveDate macOS Tests"
+               ReferencedContainer = "container:NaiveDate.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0C5108201D4E81CE00F1F405"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime macOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate macOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0C5108201D4E81CE00F1F405"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime macOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate macOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0C5108201D4E81CE00F1F405"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime macOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate macOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

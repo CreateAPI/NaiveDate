@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
-    s.name             = 'NaiveDateTime'
+    s.name             = 'NaiveDate'
     s.version          = '0.1'
     s.summary          = 'The missing naive date, time and datetime'
-    s.homepage         = 'https://github.com/kean/NaiveDateTime'
+    s.homepage         = 'https://github.com/kean/NaiveDate'
     s.license          = 'MIT'
     s.author           = 'Alexander Grebenyuk'
     s.social_media_url = 'https://twitter.com/a_grebenyuk'
-    s.source           = { :git => 'https://github.com/kean/NaiveDateTime.git', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/kean/NaiveDate.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = '10.0'
     s.watchos.deployment_target = '3.0'

@@ -1,10 +1,10 @@
-#  NaiveDateTime
+#  NaiveDate
 
 <p align="left">
-<img src="https://img.shields.io/cocoapods/v/NaiveDateTime.svg?label=version">
+<img src="https://img.shields.io/cocoapods/v/NaiveDate.svg?label=version">
 <img src="https://img.shields.io/badge/supports-CocoaPods%20%7C%20Carthage%20%7C%20SwiftPM-green.svg">
-<img src="https://img.shields.io/cocoapods/p/NaiveDateTime.svg?style=flat)">
-<a href="https://travis-ci.org/kean/NaiveDateTime"><img src="https://img.shields.io/travis/kean/NaiveDateTime/master.svg"></a>
+<img src="https://img.shields.io/cocoapods/p/NaiveDate.svg?style=flat)">
+<a href="https://travis-ci.org/kean/NaiveDate"><img src="https://img.shields.io/travis/kean/NaiveDate/master.svg"></a>
 </p>
 
 The missing **naive** date, time, and datetime types.
@@ -100,4 +100,4 @@ Calendar.current.date(from: dateTime, in: TimeZone(secondsFromGMT: 0)!),
 
 ## License
 
-NaiveDateTime is available under the MIT license. See the LICENSE file for more info.
+NaiveDate is available under the MIT license. See the LICENSE file for more info.

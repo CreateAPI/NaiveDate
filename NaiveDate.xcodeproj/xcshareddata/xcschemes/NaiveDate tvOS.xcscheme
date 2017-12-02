@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0C5108361D4E824A00F1F405"
-               BuildableName = "NaiveDateTime.framework"
-               BlueprintName = "NaiveDateTime iOS"
-               ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+               BlueprintIdentifier = "0C5108441D4E82B900F1F405"
+               BuildableName = "NaiveDate.framework"
+               BlueprintName = "NaiveDate tvOS"
+               ReferencedContainer = "container:NaiveDate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,20 +33,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0CAA5D111DB14766001F6D96"
-               BuildableName = "NaiveDateTime iOS Tests.xctest"
-               BlueprintName = "NaiveDateTime iOS Tests"
-               ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+               BlueprintIdentifier = "0CAA5D271DB14901001F6D96"
+               BuildableName = "NaiveDate tvOS Tests.xctest"
+               BlueprintName = "NaiveDate tvOS Tests"
+               ReferencedContainer = "container:NaiveDate.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0C5108361D4E824A00F1F405"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime iOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BlueprintIdentifier = "0C5108441D4E82B900F1F405"
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate tvOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,10 +66,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0C5108361D4E824A00F1F405"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime iOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BlueprintIdentifier = "0C5108441D4E82B900F1F405"
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate tvOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,10 +84,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0C5108361D4E824A00F1F405"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime iOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BlueprintIdentifier = "0C5108441D4E82B900F1F405"
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate tvOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0CE051FF1D4E830700A12B45"
-               BuildableName = "NaiveDateTime.framework"
-               BlueprintName = "NaiveDateTime watchOS"
-               ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+               BuildableName = "NaiveDate.framework"
+               BlueprintName = "NaiveDate watchOS"
+               ReferencedContainer = "container:NaiveDate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,9 +48,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0CE051FF1D4E830700A12B45"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime watchOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate watchOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0CE051FF1D4E830700A12B45"
-            BuildableName = "NaiveDateTime.framework"
-            BlueprintName = "NaiveDateTime watchOS"
-            ReferencedContainer = "container:NaiveDateTime.xcodeproj">
+            BuildableName = "NaiveDate.framework"
+            BlueprintName = "NaiveDate watchOS"
+            ReferencedContainer = "container:NaiveDate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
