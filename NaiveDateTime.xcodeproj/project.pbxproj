@@ -17,7 +17,6 @@
 		0CAA5D331DB14912001F6D96 /* NaiveDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTimeTests.swift */; };
 		0CAA5D3E1DB1495E001F6D96 /* NaiveDateTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5108211D4E81CE00F1F405 /* NaiveDateTime.framework */; };
 		0CAA5D441DB1496B001F6D96 /* NaiveDateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA5D1F1DB14780001F6D96 /* NaiveDateTimeTests.swift */; };
-		0CE6A8AF1FD1DB9700627ED1 /* Calendar+NaiveDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8AE1FD1DB9700627ED1 /* Calendar+NaiveDateTime.swift */; };
 		0CE6A8B61FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */; };
 		0CE6A8B71FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */; };
 		0CE6A8B81FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */; };
@@ -69,7 +68,6 @@
 		0CAA5D391DB1495E001F6D96 /* NaiveDateTime macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NaiveDateTime macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA5D461DB149FF001F6D96 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		0CE052001D4E830700A12B45 /* NaiveDateTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NaiveDateTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CE6A8AE1FD1DB9700627ED1 /* Calendar+NaiveDateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+NaiveDateTime.swift"; sourceTree = "<group>"; };
 		0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaiveDateTimeFormatter.swift; sourceTree = "<group>"; };
 		0CE6A8BA1FD1E69400627ED1 /* NaiveDateTimeFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaiveDateTimeFormatterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				0C20715A1D4E83A700EA5BEF /* NaiveDateTime.swift */,
-				0CE6A8AE1FD1DB9700627ED1 /* Calendar+NaiveDateTime.swift */,
 				0CE6A8B51FD1E00900627ED1 /* NaiveDateTimeFormatter.swift */,
 			);
 			path = Sources;
@@ -499,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CE6A8B61FD1E00900627ED1 /* NaiveDateTimeFormatter.swift in Sources */,
-				0CE6A8AF1FD1DB9700627ED1 /* Calendar+NaiveDateTime.swift in Sources */,
 				0C20715B1D4E83A700EA5BEF /* NaiveDateTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
