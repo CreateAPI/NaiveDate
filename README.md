@@ -67,10 +67,6 @@ let date = NaiveDate(year: 2017, month: 10, day: 1)
 // Creates `Date` in a calendar's time zone
 // "2017-10-01T00:00:00+0300" if user is in MSK
 Calendar.current.date(from: date)
-
-// Creates `Date` with +0000 offset
-// "2017-10-01T00:00:00Z"
-Calendar.current.date(from: date, in: TimeZone(secondsFromGMT: 0)!)
 ```
 
 ```swift
@@ -82,10 +78,6 @@ let dateTime = NaiveDateTime(
 // Creates `Date` in a calendar's time zone
 // "2017-10-01T15:30:00+0300" if user is in MSK
 Calendar.current.date(from: dateTime)
-
-// Creates `Date` with +0000 offset
-// "2017-10-01T15:30:00Z"
-Calendar.current.date(from: dateTime, in: TimeZone(secondsFromGMT: 0)!),
 ```
 
 
