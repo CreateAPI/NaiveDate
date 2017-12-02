@@ -11,7 +11,7 @@ import NaiveDate
 let date = NaiveDate("2017-11-01")!
 Calendar.current.date(from: date)
 
-NaiveDateFormatter(dateStyle: .short).string(from: date)
+NaiveDateFormatter(dateStyle: .medium).string(from: date)
 
 
 /*:
@@ -34,4 +34,4 @@ NaiveDateFormatter(timeStyle: .short).string(from: time)
 let dateTime = NaiveDateTime("2017-11-01T15:30:00")!
 Calendar.current.date(from: dateTime)
 
-NaiveDateFormatter(dateStyle: .short, timeStyle: .short).string(from: dateTime)
+NaiveDateFormatter(dateStyle: .medium, timeStyle: .short).string(from: dateTime)

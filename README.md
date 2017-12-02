@@ -48,7 +48,7 @@ Format dates without having to worry about time zones:
 ```swift
 let date = NaiveDate("2017-11-01")!
 NaiveDateFormatter(dateStyle: .short).string(from: date)
-// prints "11/1/17"
+// prints "Nov 1, 2017"
 
 let time = NaiveTime("15:00")!
 NaiveDateFormatter(timeStyle: .short).string(from: time)
@@ -56,7 +56,7 @@ NaiveDateFormatter(timeStyle: .short).string(from: time)
 
 let dateTime = NaiveDateTime("2017-11-01T15:30:00")!
 NaiveDateFormatter(dateStyle: .short, timeStyle: .short).string(from: dateTime)
-// prints "11/1/17, 3:30 PM"
+// prints "Nov 1, 2017 at 3:30 PM"
 ```
 
 ### Convert

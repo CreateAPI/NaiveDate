@@ -9,32 +9,36 @@ import Foundation
 
 /// Formatting without time zones.
 public final class NaiveDateFormatter {
-    private var formatter = DateFormatter()
-    private let converter = NaiveDateTimeConverter()
+    private let formatter = DateFormatter()
 
-    public init(locale: Locale = Locale.current, format: String) {
-        formatter.locale = locale
-        formatter.timeZone = converter.timeZone // important! UTC to UTC
-        formatter.dateFormat = format
+    public init(_ closure: (_ formatter: DateFormatter) -> Void) {
+        closure(formatter)
+        self.formatter.timeZone = TimeZone._utc // important! UTC to UTC
     }
 
-    public init(locale: Locale = Locale.current, dateStyle: DateFormatter.Style = .none, timeStyle: DateFormatter.Style = .none) {
-        formatter.locale = locale
-        formatter.timeZone = converter.timeZone // important! UTC to UTC
-        formatter.dateStyle = dateStyle
-        formatter.timeStyle = timeStyle
+    public convenience init(format: String) {
+        self.init {
+            $0.dateFormat = format
+        }
     }
 
-    public func string(from date: NaiveDate) -> String? {
-        return converter.date(from: date).map { formatter.string(from: $0) }
+    public convenience init(dateStyle: DateFormatter.Style = .none, timeStyle: DateFormatter.Style = .none) {
+        self.init {
+            $0.dateStyle = dateStyle
+            $0.timeStyle = timeStyle
+        }
     }
 
-    public func string(from time: NaiveTime) -> String? {
-        return converter.date(from: time).map { formatter.string(from: $0) }
+    public func string(from value: NaiveDate) -> String? {
+        return formatter.calendar._utcDate(from: value).map { formatter.string(from: $0) }
     }
 
-    public func string(from dateTime: NaiveDateTime) -> String? {
-        return converter.date(from: dateTime).map { formatter.string(from: $0) }
+    public func string(from value: NaiveTime) -> String? {
+        return formatter.calendar._utcDate(from: value).map { formatter.string(from: $0) }
+    }
+
+    public func string(from value: NaiveDateTime) -> String? {
+        return formatter.calendar._utcDate(from: value).map { formatter.string(from: $0) }
     }
 }
 
@@ -44,48 +48,52 @@ public final class NaiveDateFormatter {
 /// Formatting without time zones.
 public final class NaiveDateRangeFormatter {
     private let formatter = DateIntervalFormatter()
-    private let converter = NaiveDateTimeConverter()
 
-    public init(locale: Locale = Locale.current, format: String) {
-        formatter.locale = locale
-        formatter.timeZone = converter.timeZone // important! UTC to UTC
-        formatter.dateTemplate = format
+    public init(_ closure: (_ formatter: DateIntervalFormatter) -> Void) {
+        closure(formatter)
+        self.formatter.timeZone = TimeZone._utc // important! UTC to UTC
     }
 
-    public init(locale: Locale = Locale.current, dateStyle: DateIntervalFormatter.Style = .none, timeStyle: DateIntervalFormatter.Style = .none) {
-        formatter.locale = locale
-        formatter.timeZone = converter.timeZone // important! UTC to UTC
-        formatter.dateStyle = dateStyle
-        formatter.timeStyle = timeStyle
+    public convenience init(format: String) {
+        self.init {
+            $0.dateTemplate = format
+        }
+    }
+
+    public convenience init(dateStyle: DateIntervalFormatter.Style = .none, timeStyle: DateIntervalFormatter.Style = .none) {
+        self.init {
+            $0.dateStyle = dateStyle
+            $0.timeStyle = timeStyle
+        }
     }
 
     public func string(from start: NaiveDate, to end: NaiveDate) -> String? {
-        return converter.dateRange(from: start, to: end).map { formatter.string(from: $0, to: $1) }
+        return formatter.calendar._utcDateRange(from: start, to: end).map { formatter.string(from: $0, to: $1) }
     }
 
     public func string(from start: NaiveTime, to end: NaiveTime) -> String? {
-        return converter.dateRange(from: start, to: end).map { formatter.string(from: $0, to: $1) }
+        return formatter.calendar._utcDateRange(from: start, to: end).map { formatter.string(from: $0, to: $1) }
     }
 
     public func string(from start: NaiveDateTime, to end: NaiveDateTime) -> String? {
-        return converter.dateRange(from: start, to: end).map { formatter.string(from: $0, to: $1) }
+        return formatter.calendar._utcDateRange(from: start, to: end).map { formatter.string(from: $0, to: $1) }
     }
 }
 
 
 // MARK: - Private -
 
-/// Converts `Naive*` to `Date` in UTC.
-private final class NaiveDateTimeConverter {
-    private let calendar = Calendar.current
-    let timeZone = TimeZone(secondsFromGMT: 0)!
+private extension TimeZone {
+    static let _utc = TimeZone(secondsFromGMT: 0)!
+}
 
-    func date<T: _DateComponentsConvertible>(from date: T) -> Date? {
-        return calendar._date(from: date, in: timeZone)
+private extension Calendar {
+    func _utcDate<T: _DateComponentsConvertible>(from date: T) -> Date? {
+        return self._date(from: date, in: TimeZone._utc)
     }
 
-    func dateRange<T: _DateComponentsConvertible>(from start: T, to end: T) -> (Date, Date)? {
-        guard let start = date(from: start), let end = date(from: end) else { return nil }
+    func _utcDateRange<T: _DateComponentsConvertible>(from start: T, to end: T) -> (Date, Date)? {
+        guard let start = _date(from: start), let end = _date(from: end) else { return nil }
         return (start, end)
     }
 }
