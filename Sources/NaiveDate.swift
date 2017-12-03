@@ -21,7 +21,7 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     // MARK: Equatable, Hashable, Comparable
 
     public var hashValue: Int {
-        return year ^ month ^ day
+        return year << 10 ^ month << 5 ^ day
     }
 
     public static func ==(lhs: NaiveDate, rhs: NaiveDate) -> Bool {
@@ -78,7 +78,7 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
     }
 
     public var hashValue: Int {
-        return hour ^ minute ^ second
+        return hour << 10 ^ minute << 5 ^ second
     }
 
     /// Initializes a naive time with a given time interval. E.g.
@@ -160,7 +160,7 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
     // MARK: Equatable, Hashable, Comparable
 
     public var hashValue: Int {
-        return date.hashValue ^ time.hashValue
+        return date.hashValue << 10 ^ time.hashValue
     }
 
     public static func ==(lhs: NaiveDateTime, rhs: NaiveDateTime) -> Bool {
