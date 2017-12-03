@@ -78,7 +78,7 @@ let dateTime = NaiveDateTime(
 Calendar.current.date(from: dateTime)
 ```
 
-**Important!** The naive types do not perform any validation of the input components (year, hour, etc). This means the datetime may not actually exist in certain areas in the world even though it is valid. For example, when daylight saving changes are applied by a region, the clock typically moves forward or backward by one hour. This means certain datetimes never occur or may occur more than once. If you do need to do any precise manipulations with time use native `Date` and `Calendar` types.
+**Important!** The naive types are called this way because they don’t have a time zone associated with them. This means the date may not actually exist in some areas in the world, even though they are “valid”. For example, when daylight saving changes are applied the clock typically moves forward or backward by one hour. This means certain dates never occur or may occur more than once. If you need to do any precise manipulations with time, always use native `Date` and `Calendar`.
 
 ## Requirements
 
