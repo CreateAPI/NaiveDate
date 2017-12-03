@@ -25,13 +25,11 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     }
 
     public static func ==(lhs: NaiveDate, rhs: NaiveDate) -> Bool {
-        return lhs.year == rhs.year && lhs.month == rhs.month && lhs.day == rhs.day
+        return (lhs.year, lhs.month, lhs.day) == (rhs.year, rhs.month, rhs.day)
     }
 
     public static func <(lhs: NaiveDate, rhs: NaiveDate) -> Bool {
-        if lhs.year != rhs.year { return lhs.year < rhs.year }
-        if lhs.month != rhs.month { return lhs.month < rhs.month }
-        return lhs.day < rhs.day
+        return (lhs.year, lhs.month, lhs.day) < (rhs.year, rhs.month, rhs.day)
     }
 
     // MARK: LosslessStringConvertible
@@ -39,8 +37,7 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     /// Creates a naive date from a given string (e.g. "2017-12-30").
     public init?(_ string: String) {
         // Not using `ISO8601DateFormatter` because it only works with `Date`
-        guard let cmps = _components(from: string, separator: "-"),
-            cmps.count == 3 else { return nil }
+        guard let cmps = _components(from: string, separator: "-"), cmps.count == 3 else { return nil }
         self = NaiveDate(year: cmps[0], month: cmps[1], day: cmps[2])
     }
 
@@ -99,13 +96,11 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
     // MARK: Equatable, Comparable
 
     public static func ==(lhs: NaiveTime, rhs: NaiveTime) -> Bool {
-        return lhs.hour == rhs.hour && lhs.minute == rhs.minute && lhs.second == rhs.second
+        return (lhs.hour, lhs.minute, lhs.second) == (rhs.hour, rhs.minute, rhs.second)
     }
 
     public static func <(lhs: NaiveTime, rhs: NaiveTime) -> Bool {
-        if lhs.hour != rhs.hour { return lhs.hour < rhs.hour }
-        if lhs.minute != rhs.minute { return lhs.minute < rhs.minute }
-        return lhs.second < rhs.second
+        return (lhs.hour, lhs.minute, lhs.second) < (rhs.hour, rhs.minute, rhs.second)
     }
 
     // MARK: LosslessStringConvertible
