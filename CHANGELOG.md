@@ -1,3 +1,7 @@
+## NaiveDate 0.3
+
+- `Date` conversion now supports optional timezone parameters
+
 ## NaiveDate 0.2.1
 
 - Improve Hashing implementation (reduce number of collisions)
