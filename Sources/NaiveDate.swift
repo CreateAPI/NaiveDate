@@ -211,41 +211,46 @@ public extension Calendar {
     // MARK: Naive* -> Date
 
     /// Returns a date in calendar's time zone created from the naive date.
-    public func date(from date: NaiveDate) -> Date? {
-        return _date(from: date)
+    public func date(from date: NaiveDate, in timeZone: TimeZone? = nil) -> Date? {
+        return _date(from: date, in: timeZone)
     }
 
     /// Returns a date in calendar's time zone created from the naive time.
-    public func date(from time: NaiveTime) -> Date? {
-        return _date(from: time)
+    public func date(from time: NaiveTime, in timeZone: TimeZone? = nil) -> Date? {
+        return _date(from: time, in: timeZone)
     }
 
     /// Returns a date in calendar's time zone created from the naive datetime.
-    public func date(from dateTime: NaiveDateTime) -> Date? {
-        return _date(from: dateTime)
+    public func date(from dateTime: NaiveDateTime, in timeZone: TimeZone? = nil) -> Date? {
+        return _date(from: dateTime, in: timeZone)
     }
 
-    internal func _date<T: _DateComponentsConvertible>(from value: T) -> Date? {
-        return self.date(from: value.dateComponents)
+    internal func _date<T: _DateComponentsConvertible>(from value: T, in timeZone: TimeZone? = nil) -> Date? {
+        var components = value.dateComponents
+        components.timeZone = timeZone
+        return self.date(from: components)
     }
 
     // MARK: Date -> Naive*
 
     /// Returns naive date from a date, as if in a given time zone. User calendar's time zone.
-    public func naiveDate(from date: Date) -> NaiveDate {
-        let components = self.dateComponents(in: timeZone, from: date)
+    /// - parameter timeZone: By default uses calendar's time zone.
+    public func naiveDate(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDate {
+        let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveDate(year: components.year!, month: components.month!, day: components.day!)
     }
 
     /// Returns naive time from a date, as if in a given time zone. User calendar's time zone.
-    public func naiveTime(from date: Date) -> NaiveTime {
-        let components = self.dateComponents(in: timeZone, from: date)
+    /// - parameter timeZone: By default uses calendar's time zone.
+    public func naiveTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveTime {
+        let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveTime(hour: components.hour!, minute: components.minute!, second: components.second!)
     }
 
     /// Returns naive time from a date, as if in a given time zone. User calendar's time zone.
-    public func naiveDateTime(from date: Date) -> NaiveDateTime {
-        let components = self.dateComponents(in: timeZone, from: date)
+    /// - parameter timeZone: By default uses calendar's time zone.
+    public func naiveDateTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDateTime {
+        let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveDateTime(
             date: NaiveDate(year: components.year!, month: components.month!, day: components.day!),
             time: NaiveTime(hour: components.hour!, minute: components.minute!, second: components.second!)
