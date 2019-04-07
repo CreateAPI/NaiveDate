@@ -1,3 +1,10 @@
+## NaiveDate 0.4
+
+- Add Swift 5.0 support
+- Add SwiftPM 5.0 support
+- Remove Swift 4.0 and Swift 4.1 support
+- Add a single `NaiveDate` target which can build the framework for any platform
+
 ## NaiveDate 0.3
 
 - `Date` conversion now supports optional timezone parameters

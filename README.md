@@ -82,10 +82,10 @@ Calendar.current.date(from: dateTime)
 
 ## Requirements
 
-- iOS 10.0 / watchOS 3.0 / OS X 10.12 / tvOS 10.0
-- Xcode 9
-- Swift 4
-
+| NaiveDate            | Swift                 | Xcode                | Platforms                                         |
+|----------------------|-----------------------|----------------------|---------------------------------------------------|
+| NaiveDate 0.4        | Swift 4.2 – 5.0       | Xcode 10.1 – 10.2    | iOS 10.0 / watchOS 3.0 / macOS 10.12 / tvOS 10.0  |
+| NaiveDate 0.3        | Swift 4.0 – 4.2       | Xcode 9.2 – 10.1     | iOS 10.0 / watchOS 3.0 / macOS 10.12 / tvOS 10.0  |
 
 ## License
 

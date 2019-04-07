@@ -18,15 +18,7 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
         self.year = year; self.month = month; self.day = day
     }
 
-    // MARK: Equatable, Hashable, Comparable
-
-    public var hashValue: Int {
-        return year << 10 ^ month << 5 ^ day
-    }
-
-    public static func ==(lhs: NaiveDate, rhs: NaiveDate) -> Bool {
-        return (lhs.year, lhs.month, lhs.day) == (rhs.year, rhs.month, rhs.day)
-    }
+    // MARK: Comparable
 
     public static func <(lhs: NaiveDate, rhs: NaiveDate) -> Bool {
         return (lhs.year, lhs.month, lhs.day) < (rhs.year, rhs.month, rhs.day)
@@ -77,10 +69,6 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
         self.hour = hour; self.minute = minute; self.second = second
     }
 
-    public var hashValue: Int {
-        return hour << 10 ^ minute << 5 ^ second
-    }
-
     /// Initializes a naive time with a given time interval. E.g.
     /// `NaiveTime(timeInterval: 3610)` returns `NaiveTime(hour: 1, second: 10)`.
     public init(timeInterval ti: Int) {
@@ -93,11 +81,7 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
         return hour * 3600 + minute * 60 + second
     }
 
-    // MARK: Equatable, Comparable
-
-    public static func ==(lhs: NaiveTime, rhs: NaiveTime) -> Bool {
-        return (lhs.hour, lhs.minute, lhs.second) == (rhs.hour, rhs.minute, rhs.second)
-    }
+    // MARK: Comparable
 
     public static func <(lhs: NaiveTime, rhs: NaiveTime) -> Bool {
         return (lhs.hour, lhs.minute, lhs.second) < (rhs.hour, rhs.minute, rhs.second)
@@ -157,15 +141,7 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
         self.time = NaiveTime(hour: hour, minute: minute, second: second)
     }
 
-    // MARK: Equatable, Hashable, Comparable
-
-    public var hashValue: Int {
-        return date.hashValue << 10 ^ time.hashValue
-    }
-
-    public static func ==(lhs: NaiveDateTime, rhs: NaiveDateTime) -> Bool {
-        return lhs.date == rhs.date && lhs.time == rhs.time
-    }
+    // MARK: Comparable
 
     public static func <(lhs: NaiveDateTime, rhs: NaiveDateTime) -> Bool {
         if lhs.date != rhs.date { return lhs.date < rhs.date }
@@ -211,17 +187,17 @@ public extension Calendar {
     // MARK: Naive* -> Date
 
     /// Returns a date in calendar's time zone created from the naive date.
-    public func date(from date: NaiveDate, in timeZone: TimeZone? = nil) -> Date? {
+    func date(from date: NaiveDate, in timeZone: TimeZone? = nil) -> Date? {
         return _date(from: date, in: timeZone)
     }
 
     /// Returns a date in calendar's time zone created from the naive time.
-    public func date(from time: NaiveTime, in timeZone: TimeZone? = nil) -> Date? {
+    func date(from time: NaiveTime, in timeZone: TimeZone? = nil) -> Date? {
         return _date(from: time, in: timeZone)
     }
 
     /// Returns a date in calendar's time zone created from the naive datetime.
-    public func date(from dateTime: NaiveDateTime, in timeZone: TimeZone? = nil) -> Date? {
+    func date(from dateTime: NaiveDateTime, in timeZone: TimeZone? = nil) -> Date? {
         return _date(from: dateTime, in: timeZone)
     }
 
@@ -235,21 +211,21 @@ public extension Calendar {
 
     /// Returns naive date from a date, as if in a given time zone. User calendar's time zone.
     /// - parameter timeZone: By default uses calendar's time zone.
-    public func naiveDate(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDate {
+    func naiveDate(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDate {
         let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveDate(year: components.year!, month: components.month!, day: components.day!)
     }
 
     /// Returns naive time from a date, as if in a given time zone. User calendar's time zone.
     /// - parameter timeZone: By default uses calendar's time zone.
-    public func naiveTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveTime {
+    func naiveTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveTime {
         let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveTime(hour: components.hour!, minute: components.minute!, second: components.second!)
     }
 
     /// Returns naive time from a date, as if in a given time zone. User calendar's time zone.
     /// - parameter timeZone: By default uses calendar's time zone.
-    public func naiveDateTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDateTime {
+    func naiveDateTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDateTime {
         let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveDateTime(
             date: NaiveDate(year: components.year!, month: components.month!, day: components.day!),
@@ -282,6 +258,6 @@ private func _encode<T: LosslessStringConvertible>(_ value: T, to encoder: Encod
 
 private func _components(from string: String, separator: String) -> [Int]? {
     let substrings = string.components(separatedBy: separator)
-    let components = substrings.flatMap(Int.init)
+    let components = substrings.compactMap(Int.init)
     return components.count == substrings.count ? components : nil
 }

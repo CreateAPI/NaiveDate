@@ -1,9 +1,12 @@
-// The MIT License (MIT)
-//
-// Copyright (c) 2017 Alexander Grebenyuk (github.com/kean).
-
+// swift-tools-version:5.0
 import PackageDescription
 
 let package = Package(
-    name: "NaiveDate"
+    name: "NaiveDate",
+    products: [
+        .library(name: "NaiveDate", targets: ["NaiveDate"]),
+    ],
+    targets: [
+        .target(name: "NaiveDate", path: "Sources")
+    ]
 )
