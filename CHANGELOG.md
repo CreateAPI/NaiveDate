@@ -1,7 +1,7 @@
 
 # NaiveDate 1.x
 
-## NaiveDate 0.5
+## NaiveDate 1.0
 
 *Dec 18, 2021*
 
