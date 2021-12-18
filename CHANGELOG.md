@@ -6,6 +6,7 @@
 *Dec 18, 2021*
 
 - Bump minimum required versions
+- Fix SPM support (tags were not formatted correctly)
 - Remove CocoaPods and Carthage support
 
 # NaiveDate 0.x
