@@ -4,8 +4,7 @@
 
 import Foundation
 
-
-// MARK: - NaiveDateFormatter -
+// MARK: - NaiveDateFormatter
 
 /// Formatting without time zones.
 public final class NaiveDateFormatter {
@@ -41,8 +40,7 @@ public final class NaiveDateFormatter {
     }
 }
 
-
-// MARK: - NaiveDateRangeFormatter -
+// MARK: - NaiveDateRangeFormatter
 
 /// Formatting without time zones.
 public final class NaiveDateRangeFormatter {
@@ -78,8 +76,7 @@ public final class NaiveDateRangeFormatter {
     }
 }
 
-
-// MARK: - Private -
+// MARK: - Private
 
 private extension Calendar {
     func _dateRange<T: _DateComponentsConvertible>(from start: T, to end: T) -> (Date, Date)? {

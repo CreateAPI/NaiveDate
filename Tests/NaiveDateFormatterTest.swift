@@ -2,9 +2,9 @@
 //
 // Copyright (c) 2017-2019 Alexander Grebenyuk (github.com/kean).
 
+import Foundation
 import XCTest
 import NaiveDate
-
 
 class NaiveDateFormatterTest: XCTestCase {
     func testNaiveTimeFormatter_enUS() {

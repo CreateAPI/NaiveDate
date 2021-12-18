@@ -7,6 +7,7 @@ let package = Package(
         .library(name: "NaiveDate", targets: ["NaiveDate"]),
     ],
     targets: [
-        .target(name: "NaiveDate", path: "Sources")
+        .target(name: "NaiveDate", path: "Sources"),
+        .testTarget(name: "NaiveDateTests", dependencies: ["NaiveDate"], path: "Tests")
     ]
 )

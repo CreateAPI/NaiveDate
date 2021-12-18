@@ -4,8 +4,7 @@
 
 import Foundation
 
-
-// MARK: - NaiveDate -
+// MARK: - NaiveDate
 
 /// Calendar date without a timezone.
 public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
@@ -55,8 +54,7 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     }
 }
 
-
-// MARK: - NaiveTime -
+// MARK: - NaiveTime
 
 /// Time without a timezone. Allows for second precision.
 public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
@@ -119,7 +117,7 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
 }
 
 
-// MARK: - NaiveDateTime -
+// MARK: - NaiveDateTime
 
 /// Combined date and time without timezone.
 public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
@@ -181,7 +179,7 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
 }
 
 
-// MARK: - Calendar Extensions -
+// MARK: - Calendar Extensions
 
 public extension Calendar {
     // MARK: Naive* -> Date
@@ -234,8 +232,7 @@ public extension Calendar {
     }
 }
 
-
-// MARK: - Private -
+// MARK: - Private
 
 /// A type that can be converted to DateComponents (and in turn to Date).
 internal protocol _DateComponentsConvertible {
