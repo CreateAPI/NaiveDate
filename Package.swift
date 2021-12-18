@@ -1,8 +1,15 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
+
 import PackageDescription
 
 let package = Package(
     name: "NaiveDate",
+    platforms: [
+        .macOS(.v10_13),
+        .iOS(.v11),
+        .tvOS(.v11),
+        .watchOS(.v4)
+    ],
     products: [
         .library(name: "NaiveDate", targets: ["NaiveDate"]),
     ],

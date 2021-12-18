@@ -1,3 +1,15 @@
+
+# NaiveDate 1.x
+
+## NaiveDate 0.5
+
+*Dec 18, 2021*
+
+- Bump minimum required versions
+- Remove CocoaPods and Carthage support
+
+# NaiveDate 0.x
+
 ## NaiveDate 0.4
 
 - Add Swift 5.0 support

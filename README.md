@@ -84,6 +84,7 @@ Calendar.current.date(from: dateTime)
 
 | NaiveDate            | Swift                 | Xcode                | Platforms                                         |
 |----------------------|-----------------------|----------------------|---------------------------------------------------|
+| NaiveDate 1.0        | Swift 5.3             | Xcode 12.0           | iOS 11.0 / watchOS 4.0 / macOS 10.13 / tvOS 11.0  |
 | NaiveDate 0.4        | Swift 4.2 – 5.0       | Xcode 10.1 – 10.2    | iOS 10.0 / watchOS 3.0 / macOS 10.12 / tvOS 10.0  |
 | NaiveDate 0.3        | Swift 4.0 – 4.2       | Xcode 9.2 – 10.1     | iOS 10.0 / watchOS 3.0 / macOS 10.12 / tvOS 10.0  |
 
