@@ -1,10 +1,8 @@
 #  NaiveDate
 
 <p align="left">
-<img src="https://img.shields.io/cocoapods/v/NaiveDate.svg?label=version">
-<img src="https://img.shields.io/badge/supports-CocoaPods%20%7C%20Carthage%20%7C%20SwiftPM-green.svg">
 <img src="https://img.shields.io/cocoapods/p/NaiveDate.svg?style=flat)">
-<a href="https://travis-ci.org/kean/NaiveDate"><img src="https://img.shields.io/travis/kean/NaiveDate/master.svg"></a>
+<img src="https://github.com/kean/Nuke/workflows/NaiveDate%20CI/badge.svg">
 </p>
 
 `Date` type is great for working with time zones (e.g. `2017-09-29T15:00:00+0300`), however, there are scenarios in which **naive** dates and times are desirable.
