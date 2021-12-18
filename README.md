@@ -79,7 +79,7 @@ Calendar.current.date(from: dateTime)
 
 **Important!** The naive types are called this way because they don’t have a time zone associated with them. This means the date may not actually exist in some areas in the world, even though they are “valid”. For example, when daylight saving changes are applied the clock typically moves forward or backward by one hour. This means certain dates never occur or may occur more than once. If you need to do any precise manipulations with time, always use native `Date` and `Calendar`.
 
-## Requirements
+## Minimum Requirements
 
 | NaiveDate            | Swift                 | Xcode                | Platforms                                         |
 |----------------------|-----------------------|----------------------|---------------------------------------------------|
