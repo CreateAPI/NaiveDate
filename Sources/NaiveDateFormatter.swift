@@ -3,7 +3,7 @@ import Foundation
 // MARK: - NaiveDateFormatter
 
 /// Formatting without time zones.
-public final class NaiveDateFormatter {
+public final class NaiveDateFormatter: Sendable {
     private let formatter = DateFormatter()
 
     public init(_ closure: (_ formatter: DateFormatter) -> Void) {
@@ -39,7 +39,7 @@ public final class NaiveDateFormatter {
 // MARK: - NaiveDateRangeFormatter
 
 /// Formatting without time zones.
-public final class NaiveDateRangeFormatter {
+public final class NaiveDateRangeFormatter: Sendable {
     private let formatter = DateIntervalFormatter()
 
     public init(_ closure: (_ formatter: DateIntervalFormatter) -> Void) {

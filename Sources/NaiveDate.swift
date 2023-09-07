@@ -3,7 +3,7 @@ import Foundation
 // MARK: - NaiveDate
 
 /// Calendar date without a timezone.
-public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
+public struct NaiveDate: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let year: Int, month: Int, day: Int
 
     /// Initializes the naive date with a given date components.
@@ -53,7 +53,7 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
 // MARK: - NaiveTime
 
 /// Time without a timezone. Allows for second precision.
-public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
+public struct NaiveTime: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let hour: Int, minute: Int, second: Int
 
     /// Initializes the naive time with a given date components.
@@ -116,7 +116,7 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
 // MARK: - NaiveDateTime
 
 /// Combined date and time without timezone.
-public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
+public struct NaiveDateTime: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let date: NaiveDate
     public let time: NaiveTime
 

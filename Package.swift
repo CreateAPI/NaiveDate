@@ -14,7 +14,17 @@ let package = Package(
         .library(name: "NaiveDate", targets: ["NaiveDate"]),
     ],
     targets: [
-        .target(name: "NaiveDate", path: "Sources"),
+        .target(name: "NaiveDate", path: "Sources", swiftSettings: [
+          .unsafeFlags(
+              [
+                  "-Xfrontend",
+                  "-enable-actor-data-race-checks",
+                  "-require-explicit-sendable",
+                  "-strict-concurrency=complete",
+                  "-warn-concurrency",
+              ]
+          ),
+      ]),
         .testTarget(name: "NaiveDateTests", dependencies: ["NaiveDate"], path: "Tests")
     ]
 )
