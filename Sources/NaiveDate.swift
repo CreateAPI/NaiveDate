@@ -6,6 +6,12 @@ import Foundation
 public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let year: Int, month: Int, day: Int
 
+    enum CodingKeys: String, CodingKey {
+        case year
+        case month
+        case day
+    }
+
     /// Initializes the naive date with a given date components.
     /// - important: The naive types don't validate input components. For any
     /// precise manipulations with time use native `Date` and `Calendar` types.
@@ -36,7 +42,16 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     // MARK: Codable
 
     public init(from decoder: Decoder) throws {
-        self = try _decode(from: decoder)
+        if let container = try? decoder.container(keyedBy: CodingKeys.self),
+           let year = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.year),
+           let month = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.month),
+           let day = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.day) {
+            self.year = year
+            self.month = month
+            self.day = day
+        } else {
+            self = try _decode(from: decoder)
+        }
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -55,6 +70,12 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
 /// Time without a timezone. Allows for second precision.
 public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let hour: Int, minute: Int, second: Int
+
+    enum CodingKeys: String, CodingKey {
+        case hour
+        case minute
+        case second
+    }
 
     /// Initializes the naive time with a given date components.
     /// - important: The naive types don't validate input components. For any
@@ -98,7 +119,16 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
     // MARK: Codable
 
     public init(from decoder: Decoder) throws {
-        self = try _decode(from: decoder)
+        if let container = try? decoder.container(keyedBy: CodingKeys.self),
+           let hour = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.hour),
+           let minute = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.minute),
+           let second = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.second) {
+            self.hour = hour
+            self.minute = minute
+            self.second = second
+        } else {
+            self = try _decode(from: decoder)
+        }
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -119,6 +149,11 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
 public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public let date: NaiveDate
     public let time: NaiveTime
+
+    enum CodingKeys: String, CodingKey {
+        case date
+        case time
+    }
 
     /// Initializes the naive datetime with a given date components.
     /// - important: The naive types don't validate input components. For any
@@ -160,7 +195,14 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
     // MARK: Codable
 
     public init(from decoder: Decoder) throws {
-        self = try _decode(from: decoder)
+        if let container = try? decoder.container(keyedBy: CodingKeys.self),
+          let date = try? container.decodeIfPresent(NaiveDate.self, forKey: CodingKeys.date),
+          let time = try? container.decodeIfPresent(NaiveTime.self, forKey: CodingKeys.time) {
+            self.date = date
+            self.time = time
+        } else {
+            self = try _decode(from: decoder)
+        }
     }
 
     public func encode(to encoder: Encoder) throws {
