@@ -43,9 +43,9 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
 
     public init(from decoder: Decoder) throws {
         if let container = try? decoder.container(keyedBy: CodingKeys.self),
-           let year = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.year),
-           let month = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.month),
-           let day = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.day) {
+           let year = try? container.decodeIfPresent(Int.self, forKey: .year),
+           let month = try? container.decodeIfPresent(Int.self, forKey: .month),
+           let day = try? container.decodeIfPresent(Int.self, forKey: .day) {
             self.year = year
             self.month = month
             self.day = day
@@ -55,7 +55,14 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     }
 
     public func encode(to encoder: Encoder) throws {
-        try _encode(self, to: encoder)
+        if String(describing: encoder) == "SwiftData.CompositeEncoder" {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(year, forKey: .year)
+            try container.encode(month, forKey: .month)
+            try container.encode(day, forKey: .day)
+        } else {
+            try _encode(self, to: encoder)
+        }
     }
 
     // MARK: _DateComponentsConvertible
@@ -120,9 +127,9 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
 
     public init(from decoder: Decoder) throws {
         if let container = try? decoder.container(keyedBy: CodingKeys.self),
-           let hour = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.hour),
-           let minute = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.minute),
-           let second = try? container.decodeIfPresent(Int.self, forKey: CodingKeys.second) {
+           let hour = try? container.decodeIfPresent(Int.self, forKey: .hour),
+           let minute = try? container.decodeIfPresent(Int.self, forKey: .minute),
+           let second = try? container.decodeIfPresent(Int.self, forKey: .second) {
             self.hour = hour
             self.minute = minute
             self.second = second
@@ -132,7 +139,14 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
     }
 
     public func encode(to encoder: Encoder) throws {
-        try _encode(self, to: encoder)
+        if String(describing: encoder) == "SwiftData.CompositeEncoder" {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(hour, forKey: .hour)
+            try container.encode(minute, forKey: .minute)
+            try container.encode(second, forKey: .second)
+        } else {
+            try _encode(self, to: encoder)
+        }
     }
 
     // MARK: _DateComponentsConvertible
@@ -196,8 +210,8 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
 
     public init(from decoder: Decoder) throws {
         if let container = try? decoder.container(keyedBy: CodingKeys.self),
-          let date = try? container.decodeIfPresent(NaiveDate.self, forKey: CodingKeys.date),
-          let time = try? container.decodeIfPresent(NaiveTime.self, forKey: CodingKeys.time) {
+          let date = try? container.decodeIfPresent(NaiveDate.self, forKey: .date),
+          let time = try? container.decodeIfPresent(NaiveTime.self, forKey: .time) {
             self.date = date
             self.time = time
         } else {
@@ -206,7 +220,13 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
     }
 
     public func encode(to encoder: Encoder) throws {
-        try _encode(self, to: encoder)
+        if encoder.isSwiftDataComposite {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(date, forKey: .date)
+            try container.encode(time, forKey: .time)
+        } else {
+            try _encode(self, to: encoder)
+        }
     }
 
     // MARK: _DateComponentsConvertible
@@ -295,4 +315,16 @@ private func _components(from string: String, separator: String) -> [Int]? {
     let substrings = string.components(separatedBy: separator)
     let components = substrings.compactMap(Int.init)
     return components.count == substrings.count ? components : nil
+}
+
+extension Encoder {
+    /// SwiftData composite encoder can't accept single value
+    /// as it expects to code each of attributes under the hood, which will match internal .compositeDescription
+    /// Otherwise null/zero data will be saved.
+    ///
+    /// So we detect it like this for now.
+    var isSwiftDataComposite: Bool {
+        // TODO: Figure out other way instead of introspection
+        String(describing: self) == "SwiftData.CompositeEncoder"
+    }
 }
