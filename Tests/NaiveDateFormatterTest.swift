@@ -9,8 +9,8 @@ class NaiveDateFormatterTest: XCTestCase {
             $0.timeStyle = .short
         }
 
-        XCTAssertEqual(formatter.string(from: NaiveTime("16:10")!), "4:10 PM")
-        XCTAssertEqual(formatter.string(from: NaiveTime("16:10:15")!), "4:10 PM")
+        XCTAssert(formatter.string(from: NaiveTime("16:10")!)! == "4:10 PM")
+        XCTAssert(formatter.string(from: NaiveTime("16:10:15")!)! == "4:10 PM")
     }
 
     func testNaiveTimeFormatter_enGB() {
