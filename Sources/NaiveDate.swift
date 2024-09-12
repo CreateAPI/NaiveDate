@@ -6,6 +6,12 @@ import Foundation
 public struct NaiveDate: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public var year: Int, month: Int, day: Int
 
+    enum CodingKeys: String, CodingKey {
+        case year
+        case month
+        case day
+    }
+
     /// Initializes the naive date with a given date components.
     /// - important: The naive types don't validate input components. For any
     /// precise manipulations with time use native `Date` and `Calendar` types.
@@ -41,12 +47,28 @@ public struct NaiveDate: Sendable, Equatable, Hashable, Comparable, LosslessStri
 
     @inlinable
     public init(from decoder: Decoder) throws {
-        self = try _decode(from: decoder)
+        if let container = try? decoder.container(keyedBy: CodingKeys.self),
+           let year = try? container.decodeIfPresent(Int.self, forKey: .year),
+           let month = try? container.decodeIfPresent(Int.self, forKey: .month),
+           let day = try? container.decodeIfPresent(Int.self, forKey: .day) {
+            self.year = year
+            self.month = month
+            self.day = day
+        } else {
+            self = try _decode(from: decoder)
+        }
     }
 
     @inlinable
     public func encode(to encoder: Encoder) throws {
-        try _encode(self, to: encoder)
+        if String(describing: encoder) == "SwiftData.CompositeEncoder" {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(year, forKey: .year)
+            try container.encode(month, forKey: .month)
+            try container.encode(day, forKey: .day)
+        } else {
+            try _encode(self, to: encoder)
+        }
     }
 
     // MARK: _DateComponentsConvertible
@@ -62,6 +84,12 @@ public struct NaiveDate: Sendable, Equatable, Hashable, Comparable, LosslessStri
 /// Time without a timezone. Allows for second precision.
 public struct NaiveTime: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public var hour: Int, minute: Int, second: Int
+
+    enum CodingKeys: String, CodingKey {
+        case hour
+        case minute
+        case second
+    }
 
     /// Initializes the naive time with a given date components.
     /// - important: The naive types don't validate input components. For any
@@ -105,11 +133,27 @@ public struct NaiveTime: Sendable, Equatable, Hashable, Comparable, LosslessStri
     // MARK: Codable
 
     public init(from decoder: Decoder) throws {
-        self = try _decode(from: decoder)
+        if let container = try? decoder.container(keyedBy: CodingKeys.self),
+           let hour = try? container.decodeIfPresent(Int.self, forKey: .hour),
+           let minute = try? container.decodeIfPresent(Int.self, forKey: .minute),
+           let second = try? container.decodeIfPresent(Int.self, forKey: .second) {
+            self.hour = hour
+            self.minute = minute
+            self.second = second
+        } else {
+            self = try _decode(from: decoder)
+        }
     }
 
     public func encode(to encoder: Encoder) throws {
-        try _encode(self, to: encoder)
+        if String(describing: encoder) == "SwiftData.CompositeEncoder" {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(hour, forKey: .hour)
+            try container.encode(minute, forKey: .minute)
+            try container.encode(second, forKey: .second)
+        } else {
+            try _encode(self, to: encoder)
+        }
     }
 
     // MARK: _DateComponentsConvertible
@@ -126,6 +170,11 @@ public struct NaiveTime: Sendable, Equatable, Hashable, Comparable, LosslessStri
 public struct NaiveDateTime: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
     public var date: NaiveDate
     public var time: NaiveTime
+
+    enum CodingKeys: String, CodingKey {
+        case date
+        case time
+    }
 
     /// Initializes the naive datetime with a given date components.
     /// - important: The naive types don't validate input components. For any
@@ -167,11 +216,24 @@ public struct NaiveDateTime: Sendable, Equatable, Hashable, Comparable, Lossless
     // MARK: Codable
 
     public init(from decoder: Decoder) throws {
-        self = try _decode(from: decoder)
+        if let container = try? decoder.container(keyedBy: CodingKeys.self),
+          let date = try? container.decodeIfPresent(NaiveDate.self, forKey: .date),
+          let time = try? container.decodeIfPresent(NaiveTime.self, forKey: .time) {
+            self.date = date
+            self.time = time
+        } else {
+            self = try _decode(from: decoder)
+        }
     }
 
     public func encode(to encoder: Encoder) throws {
-        try _encode(self, to: encoder)
+        if encoder.isSwiftDataComposite {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(date, forKey: .date)
+            try container.encode(time, forKey: .time)
+        } else {
+            try _encode(self, to: encoder)
+        }
     }
 
     // MARK: _DateComponentsConvertible
@@ -272,4 +334,16 @@ func _components(from string: String, separator: String) -> [Int]? {
     let substrings = string.components(separatedBy: separator)
     let components = substrings.compactMap(Int.init)
     return components.count == substrings.count ? components : nil
+}
+
+extension Encoder {
+    /// SwiftData composite encoder can't accept single value
+    /// as it expects to code each of attributes under the hood, which will match internal .compositeDescription
+    /// Otherwise null/zero data will be saved.
+    ///
+    /// So we detect it like this for now.
+    var isSwiftDataComposite: Bool {
+        // TODO: Figure out other way instead of introspection
+        String(describing: self) == "SwiftData.CompositeEncoder"
+    }
 }

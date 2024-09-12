@@ -42,6 +42,19 @@ class NaiveDateTest: XCTestCase {
         XCTAssertEqual(NaiveDate("2017-10-1"), NaiveDate(year: 2017, month: 10, day: 1))
     }
 
+    func testDecodableFromJson() {
+        let data = """
+        {
+            "year": 2024,
+            "month": 7,
+            "day": 30
+        }
+        """.data(using: .utf8)!
+
+        let date = try! JSONDecoder().decode(NaiveDate.self, from: data)
+        XCTAssertEqual(date, NaiveDate(year: 2024, month: 07, day: 30))
+    }
+
     func testToString() {
         XCTAssertEqual(NaiveDate(year: 2017, month: 10, day: 1).description, "2017-10-01")
     }
@@ -175,6 +188,19 @@ class NaiveTimeTest: XCTestCase {
     func testEncodable() {
         let data = try! JSONEncoder().encode(Wrapped(time: NaiveTime(hour: 22, minute: 15, second: 10)))
         XCTAssertEqual(String(data: data, encoding: .utf8), "{\"time\":\"22:15:10\"}")
+    }
+
+    func testDecodableFromJson() {
+        let data = """
+        {
+            "hour": 22,
+            "minute": 15,
+            "second": 10
+        }
+        """.data(using: .utf8)!
+
+        let time = try! JSONDecoder().decode(NaiveTime.self, from: data)
+        XCTAssertEqual(time, NaiveTime(hour: 22, minute: 15, second: 10))
     }
 }
 
@@ -351,6 +377,32 @@ class NaiveDateTimeTest: XCTestCase {
         let dateTime = NaiveDateTime(date: NaiveDate(year: 2017, month: 2, day: 1), time: NaiveTime(hour: 10, minute: 9, second: 8))
         let data = try! JSONEncoder().encode(Wrapped(dateTime: dateTime))
         XCTAssertEqual(String(data: data, encoding: .utf8), "{\"dateTime\":\"2017-02-01T10:09:08\"}")
+    }
+
+    func testDecodableFromJson() {
+        let data = """
+        {
+            "time": {
+                "hour": 22,
+                "minute": 15,
+                "second": 10
+            },
+            "date": {
+                "year": 2024,
+                "month": 7,
+                "day": 30
+            }
+        }
+        """.data(using: .utf8)!
+
+        let dateTime = try! JSONDecoder().decode(NaiveDateTime.self, from: data)
+
+        let expectedDateTime = NaiveDateTime(
+            date: NaiveDate(year: 2024, month: 7, day: 30),
+            time: NaiveTime(hour: 22, minute: 15, second: 10)
+        )
+
+        XCTAssertEqual(dateTime, expectedDateTime)
     }
 
     // MARK: Date <-> NaiveDateTime
