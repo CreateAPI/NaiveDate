@@ -2,6 +2,7 @@ import Foundation
 import XCTest
 import NaiveDate
 
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 final class NaiveDateFormatStyleTest: XCTestCase {
     func testFormattedNaiveDateAgainstDate_withoutParameters() throws {
         let naiveDate = NaiveDate(year: 2024, month: 8, day: 12)
