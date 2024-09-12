@@ -3,18 +3,20 @@ import Foundation
 // MARK: - NaiveDate
 
 /// Calendar date without a timezone.
-public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
-    public let year: Int, month: Int, day: Int
+public struct NaiveDate: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
+    public var year: Int, month: Int, day: Int
 
     /// Initializes the naive date with a given date components.
     /// - important: The naive types don't validate input components. For any
     /// precise manipulations with time use native `Date` and `Calendar` types.
+    @inlinable
     public init(year: Int, month: Int, day: Int) {
         self.year = year; self.month = month; self.day = day
     }
 
     // MARK: Comparable
 
+    @inlinable
     public static func <(lhs: NaiveDate, rhs: NaiveDate) -> Bool {
         return (lhs.year, lhs.month, lhs.day) < (rhs.year, rhs.month, rhs.day)
     }
@@ -22,6 +24,7 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     // MARK: LosslessStringConvertible
 
     /// Creates a naive date from a given string (e.g. "2017-12-30").
+    @inlinable
     public init?(_ string: String) {
         // Not using `ISO8601DateFormatter` because it only works with `Date`
         guard let cmps = _components(from: string, separator: "-"), cmps.count == 3 else { return nil }
@@ -29,22 +32,26 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
     }
 
     /// Returns a string representation of a naive date (e.g. "2017-12-30").
+    @inlinable
     public var description: String {
         return String(format: "%i-%.2i-%.2i", year, month, day)
     }
 
     // MARK: Codable
 
+    @inlinable
     public init(from decoder: Decoder) throws {
         self = try _decode(from: decoder)
     }
 
+    @inlinable
     public func encode(to encoder: Encoder) throws {
         try _encode(self, to: encoder)
     }
 
     // MARK: _DateComponentsConvertible
 
+    @inlinable
     public var dateComponents: DateComponents {
         return DateComponents(year: year, month: month, day: day)
     }
@@ -53,8 +60,8 @@ public struct NaiveDate: Equatable, Hashable, Comparable, LosslessStringConverti
 // MARK: - NaiveTime
 
 /// Time without a timezone. Allows for second precision.
-public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
-    public let hour: Int, minute: Int, second: Int
+public struct NaiveTime: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
+    public var hour: Int, minute: Int, second: Int
 
     /// Initializes the naive time with a given date components.
     /// - important: The naive types don't validate input components. For any
@@ -116,9 +123,9 @@ public struct NaiveTime: Equatable, Hashable, Comparable, LosslessStringConverti
 // MARK: - NaiveDateTime
 
 /// Combined date and time without timezone.
-public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
-    public let date: NaiveDate
-    public let time: NaiveTime
+public struct NaiveDateTime: Sendable, Equatable, Hashable, Comparable, LosslessStringConvertible, Codable, _DateComponentsConvertible {
+    public var date: NaiveDate
+    public var time: NaiveTime
 
     /// Initializes the naive datetime with a given date components.
     /// - important: The naive types don't validate input components. For any
@@ -175,26 +182,31 @@ public struct NaiveDateTime: Equatable, Hashable, Comparable, LosslessStringConv
 }
 
 
+
 // MARK: - Calendar Extensions
 
 public extension Calendar {
     // MARK: Naive* -> Date
 
     /// Returns a date in calendar's time zone created from the naive date.
+    @inlinable
     func date(from date: NaiveDate, in timeZone: TimeZone? = nil) -> Date? {
         return _date(from: date, in: timeZone)
     }
 
     /// Returns a date in calendar's time zone created from the naive time.
+    @inlinable
     func date(from time: NaiveTime, in timeZone: TimeZone? = nil) -> Date? {
         return _date(from: time, in: timeZone)
     }
 
     /// Returns a date in calendar's time zone created from the naive datetime.
+    @inlinable
     func date(from dateTime: NaiveDateTime, in timeZone: TimeZone? = nil) -> Date? {
         return _date(from: dateTime, in: timeZone)
     }
 
+    @usableFromInline
     internal func _date<T: _DateComponentsConvertible>(from value: T, in timeZone: TimeZone? = nil) -> Date? {
         var components = value.dateComponents
         components.timeZone = timeZone
@@ -205,6 +217,7 @@ public extension Calendar {
 
     /// Returns naive date from a date, as if in a given time zone. User calendar's time zone.
     /// - parameter timeZone: By default uses calendar's time zone.
+    @inlinable
     func naiveDate(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDate {
         let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveDate(year: components.year!, month: components.month!, day: components.day!)
@@ -212,6 +225,7 @@ public extension Calendar {
 
     /// Returns naive time from a date, as if in a given time zone. User calendar's time zone.
     /// - parameter timeZone: By default uses calendar's time zone.
+    @inlinable
     func naiveTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveTime {
         let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveTime(hour: components.hour!, minute: components.minute!, second: components.second!)
@@ -219,6 +233,7 @@ public extension Calendar {
 
     /// Returns naive time from a date, as if in a given time zone. User calendar's time zone.
     /// - parameter timeZone: By default uses calendar's time zone.
+    @inlinable
     func naiveDateTime(from date: Date, in timeZone: TimeZone? = nil) -> NaiveDateTime {
         let components = self.dateComponents(in: timeZone ?? self.timeZone, from: date)
         return NaiveDateTime(
@@ -231,11 +246,13 @@ public extension Calendar {
 // MARK: - Private
 
 /// A type that can be converted to DateComponents (and in turn to Date).
-internal protocol _DateComponentsConvertible {
+@usableFromInline
+protocol _DateComponentsConvertible {
     var dateComponents: DateComponents { get }
 }
 
-private func _decode<T: LosslessStringConvertible>(from decoder: Decoder) throws -> T {
+@usableFromInline
+func _decode<T: LosslessStringConvertible>(from decoder: Decoder) throws -> T {
     let container = try decoder.singleValueContainer()
     let string = try container.decode(String.self)
     guard let value = T(string) else {
@@ -244,12 +261,14 @@ private func _decode<T: LosslessStringConvertible>(from decoder: Decoder) throws
     return value
 }
 
-private func _encode<T: LosslessStringConvertible>(_ value: T, to encoder: Encoder) throws {
+@usableFromInline
+func _encode<T: LosslessStringConvertible>(_ value: T, to encoder: Encoder) throws {
     var container = encoder.singleValueContainer()
     try container.encode(value.description)
 }
 
-private func _components(from string: String, separator: String) -> [Int]? {
+@usableFromInline
+func _components(from string: String, separator: String) -> [Int]? {
     let substrings = string.components(separatedBy: separator)
     let components = substrings.compactMap(Int.init)
     return components.count == substrings.count ? components : nil
