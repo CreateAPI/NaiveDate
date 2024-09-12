@@ -1,6 +1,13 @@
 
 # NaiveDate 1.x
 
+## NaiveDate 1.1
+
+*Sep 12, 2024*
+
+- Add FormatStyle & Mutability & Sendability & Inlinable by @lvalenta in https://github.com/CreateAPI/NaiveDate/pull/6
+- Add support for Swift 6
+
 ## NaiveDate 1.0
 
 *Dec 18, 2021*
