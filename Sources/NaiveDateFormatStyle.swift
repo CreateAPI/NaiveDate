@@ -1,10 +1,3 @@
-//
-//  FormatStyle.swift
-//  NaiveDate
-//
-//  Created by Lukáš Valenta on 12.09.2024.
-//
-
 import Foundation
 
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
