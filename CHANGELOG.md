@@ -7,6 +7,7 @@
 
 - Add FormatStyle & Mutability & Sendability & Inlinable by @lvalenta in https://github.com/CreateAPI/NaiveDate/pull/6
 - Add support for Swift 6
+- Increase minimimum supported platforms to iOS 13, tvOS 13, watchOS 6, and macOS 10.15
 
 ## NaiveDate 1.0
 
