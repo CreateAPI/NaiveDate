@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/cocoapods/p/NaiveDate.svg?style=flat)">
 </p>
 
-Native `Date` type is great for working with time zones (e.g. `2024-09-29T15:00:00+0300`), but there are scenarios where you don't know or care about the time zone. These types of dates are often called **naive**.
+The standard `Date` type is excellent for working with timestamps and time zones (e.g. `2024-09-29T15:00:00+0300`), but there are scenarios where you don't know or care about the time zone. These types of dates are often referred to as **naive**.
 
 
 ## Usage
@@ -37,7 +37,15 @@ NaiveDateTime(
 
 ### Format
 
-Format dates without having to worry about time zones:
+`NaiveDate` supports `Foundation.FormatStyle`:
+
+```swift
+let dateTime = NaiveDateTime("2024-11-01T15:30:00")!
+dateTime.formatted(date: .numeric, time: .standard)
+// prints "11/1/2024, 3:30:00 PM"
+```
+
+In addition to the format style, you can use built-in `NaiveDateFormatter` directly.
 
 ```swift
 let date = NaiveDate("2024-11-01")!
