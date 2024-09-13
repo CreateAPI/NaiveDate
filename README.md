@@ -1,8 +1,7 @@
-#  NaiveDate
+# NaiveDate
 
 <p align="left">
 <img src="https://img.shields.io/cocoapods/p/NaiveDate.svg?style=flat)">
-<a href="https://github.com/kean/NaiveDate/actions/workflows/ci.yml"><img src="https://github.com/kean/NaiveDate/actions/workflows/ci.yml/badge.svg"></a>
 </p>
 
 Native `Date` type is great for working with time zones (e.g. `2024-09-29T15:00:00+0300`), but there are scenarios where you don't know or care about the time zone. These types of dates are often called **naive**.
