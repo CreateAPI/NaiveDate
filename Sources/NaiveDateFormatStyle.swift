@@ -242,9 +242,10 @@ public extension NaiveDateTime {
         ///
         /// - Parameter locale: The locale to apply to the format style.
         /// - Returns: A new `NaiveDateTime.FormatStyle` with the given locale.
-        public func locale(_ locale: Locale) -> NaiveDate.FormatStyle {
+        public func locale(_ locale: Locale) -> NaiveDateTime.FormatStyle {
             .init(
                 date: date,
+                time: time,
                 locale: locale,
                 calendar: calendar,
                 timeZone: timeZone,
